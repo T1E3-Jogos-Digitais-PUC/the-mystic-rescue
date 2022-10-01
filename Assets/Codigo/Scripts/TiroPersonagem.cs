@@ -23,6 +23,7 @@ public class TiroPersonagem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, Time.deltaTime * 5, 0);
+        // transform.Translate(0, Time.deltaTime * 5, 0);
+        transform.Translate(Vector3.right * Time.deltaTime * 10);
     }
 }
