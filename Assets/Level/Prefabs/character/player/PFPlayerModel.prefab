@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 1634424935724076458}
   - component: {fileID: 1634424935724076459}
   m_Layer: 0
-  m_Name: PFPlayer_backup
+  m_Name: PFPlayerModel
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

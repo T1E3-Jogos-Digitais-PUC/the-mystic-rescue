@@ -20,10 +20,9 @@ namespace Codigo.Scripts.stage
             {
                 Random random = new Random();
                 float posX = GameSettings.SCREEN_LIMIT_X[1] + 2.0f;
-                double posY = random.NextDouble() * (GameSettings.SCREEN_LIMIT_Y[1] * GameSettings.SCREEN_LIMIT_Y[0]) +
-                              GameSettings.SCREEN_LIMIT_Y[0];
-                Instantiate(PFRandomEnemy1, new Vector3(posX, (float) posY, 0.0f), transform.rotation);
-                RandomEnemyRespawnTimer = 1.0f;
+                float posY = random.Next(minValue: (int)Math.Round(GameSettings.SCREEN_LIMIT_Y[0]), (int)Math.Round(GameSettings.SCREEN_LIMIT_Y[1]));
+                Instantiate(PFRandomEnemy1, new Vector3(posX, posY, 0.0f), transform.rotation);
+                RandomEnemyRespawnTimer = 0.5f;
             }
 
             RandomEnemyRespawnTimer -= Time.deltaTime;

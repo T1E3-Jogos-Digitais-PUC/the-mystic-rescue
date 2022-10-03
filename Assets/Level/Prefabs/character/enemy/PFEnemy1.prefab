@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Purple-Snake
-  Speed: 14
+  Speed: 4
   MaxHp: 10
   CurrentHp: 10
   HitDamage: 1

@@ -1,4 +1,5 @@
 ﻿using System;
+using Codigo.Scripts.Entity.enemy.stage1;
 using Codigo.Scripts.Entity.player;
 using UnityEngine;
 
@@ -33,6 +34,7 @@ namespace Codigo.Scripts.Entity.character
         {
             if (Type.Equals(CharacterType.BULLET) && collision.gameObject.CompareTag("Enemy"))
             {
+                // Character collidedCharacter = collision.gameObject.GetComponent<Character>();
                 Destroy(collision.gameObject);
                 Destroy(gameObject);
             } else if (Type.Equals(CharacterType.ENEMY) && collision.gameObject.CompareTag("Player"))
