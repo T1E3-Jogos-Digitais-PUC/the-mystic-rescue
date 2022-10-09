@@ -7,41 +7,80 @@ namespace Codigo.Scripts.Entity.character
 {
     public class Character: MonoBehaviour
     {
-        public string Name;
         public float Speed;
-        public int MaxHp;
-        public int CurrentHp;
-        public int HitDamage;
-        public int AttackDamage;
+        public float MaxHp;
+        public float CurrentHp;
+        public float HitDamage;
+        public float AttackDamage;
+        public float FireRate;
         public CharacterType Type;
 
-        public Transform Target;
-        
         protected Vector3 Direction { get; set; }
 
-        public Character(string name, float speed, int maxHp, int currentHp, int hitDamage, int attackDamage, CharacterType type)
-        {
-            Name = name;
-            Speed = speed;
-            MaxHp = maxHp;
-            CurrentHp = currentHp;
-            HitDamage = hitDamage;
-            AttackDamage = attackDamage;
-            Type = type;
-        }
-        
         void OnCollisionEnter(Collision collision)
         {
-            if (Type.Equals(CharacterType.BULLET) && collision.gameObject.CompareTag("Enemy"))
+            Character character = GetCharacterGameObject(collision.gameObject);
+            if (character)
             {
-                // Character collidedCharacter = collision.gameObject.GetComponent<Character>();
-                Destroy(collision.gameObject);
+                BulletCollisions(character);
+                EnemyPlayerCollisions(character);
+                DieWhenHpLowerZero();
+            }
+        }
+
+        private void BulletCollisions(Character character)
+        {
+            // se bala do jogador, toca o inimigo ou a bala do inimigo toca o jogador
+            if (Type.Equals(CharacterType.PLAYER_BULLET) && character.Type.Equals(CharacterType.ENEMY))
+            {
+                Debug.Log(AttackDamage);
+                character.CurrentHp -= AttackDamage;
                 Destroy(gameObject);
-            } else if (Type.Equals(CharacterType.ENEMY) && collision.gameObject.CompareTag("Player"))
+            }
+            // se bala do jogador, toca um obstáculo
+            if (Type.Equals(CharacterType.PLAYER_BULLET) && character.Type.Equals(CharacterType.OBSTACLE))
             {
                 Destroy(gameObject);
             }
         }
+
+        private void EnemyPlayerCollisions(Character character)
+        {
+            if (Type.Equals(CharacterType.ENEMY) && character.Type.Equals(CharacterType.PLAYER))
+            {
+                character.CurrentHp -= HitDamage;
+                CurrentHp -= character.HitDamage;
+            }
+        }
         
+        private void DieWhenHpLowerZero()
+        {
+            if (CurrentHp <= 0 && !Type.Equals(CharacterType.PLAYER))
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        public static Character GetCharacterGameObject(GameObject cGameObject)
+        {
+            if (cGameObject)
+            {
+                if (cGameObject.GetComponent<Character>())
+                {
+                    return cGameObject.GetComponent<Character>();
+                }
+                try
+                {
+                    return GetCharacterGameObject(cGameObject.transform.parent.gameObject);
+                }
+                catch (Exception e)
+                {
+                    Debug.Log(e.ToString());
+                    return null;
+                }
+            }
+
+            return null;
+        }
     }
 }

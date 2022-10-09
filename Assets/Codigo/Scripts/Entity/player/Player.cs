@@ -1,24 +1,28 @@
-﻿using Codigo.Scripts.Entity.character;
+﻿using System.Globalization;
+using Codigo.Scripts.Entity.character;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI; // Don't forget this line
 
 namespace Codigo.Scripts.Entity.player
 {
     public class Player: Character
     {
-        public Player() : base("Cryani", 14.0f, 10, 10, 100, 20, CharacterType.PLAYER)
-        {
-            
-        }
-
+        public TMPro.TextMeshProUGUI text;
         void Start()
         {
- 
+
         }
         
         void Update()
         {
             PlayerMovement();
+            text.text = "Life: " + CurrentHp.ToString(CultureInfo.InvariantCulture) + "/" + MaxHp.ToString(CultureInfo.InvariantCulture);
+            if (CurrentHp <= 0)
+            {
+                // Application.LoadLevel(Application.loadedLevel);
+            }
         }
 
         // ReSharper disable Unity.PerformanceAnalysis

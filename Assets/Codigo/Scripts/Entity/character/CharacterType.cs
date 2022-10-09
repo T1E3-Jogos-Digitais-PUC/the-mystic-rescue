@@ -4,7 +4,8 @@
     {
         PLAYER,
         ENEMY,
-        BULLET,
+        PLAYER_BULLET,
+        ENEMY_BULLET,
         OBSTACLE
     }
 }
