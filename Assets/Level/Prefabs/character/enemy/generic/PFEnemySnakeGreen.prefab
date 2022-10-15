@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8aace254e0e7a9944960f5cd24ed2c8d, type: 2}
+  - {fileID: 2100000, guid: 65397e34077c73f4b98365b1a9254951, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,11 +92,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7179261229017394338}
+  - component: {fileID: 779200900059498057}
   - component: {fileID: 5618886902161444131}
   - component: {fileID: 3407956032193883693}
-  - component: {fileID: 7152928930689298653}
   m_Layer: 0
-  m_Name: PFEnemySnakePurple
+  m_Name: PFEnemySnakeGreen
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,11 +114,30 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4847220404684797836}
+  - {fileID: 8742867563168497520}
   - {fileID: 7179261228486333975}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &779200900059498057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7179261229017394339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ab91884a984a5b9e0b8889128d0dc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 1.5
+  MaxHp: 10
+  CurrentHp: 10
+  HitDamage: 6
+  AttackDamage: 1.2
+  FireRate: 0.65
+  Type: 1
 --- !u!65 &5618886902161444131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -148,26 +167,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &7152928930689298653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7179261229017394339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa44cae04b141ce8af88992c021f2e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 2.5
-  MaxHp: 15
-  CurrentHp: 15
-  HitDamage: 2
-  AttackDamage: 1.1
-  FireRate: 0.75
-  Type: 1
---- !u!1001 &6111107810392359251
+--- !u!1001 &7989151337679882671
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -224,8 +224,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d57f445c03b0b604a9d989d031693c87, type: 3}
---- !u!4 &4847220404684797836 stripped
+--- !u!4 &8742867563168497520 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1696675540587411167, guid: d57f445c03b0b604a9d989d031693c87, type: 3}
-  m_PrefabInstance: {fileID: 6111107810392359251}
+  m_PrefabInstance: {fileID: 7989151337679882671}
   m_PrefabAsset: {fileID: 0}

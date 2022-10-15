@@ -3,6 +3,7 @@ using Codigo.Scripts.Entity.character;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI; // Don't forget this line
 
 namespace Codigo.Scripts.Entity.player
@@ -21,7 +22,7 @@ namespace Codigo.Scripts.Entity.player
             text.text = "Life: " + CurrentHp.ToString(CultureInfo.InvariantCulture) + "/" + MaxHp.ToString(CultureInfo.InvariantCulture);
             if (CurrentHp <= 0)
             {
-                // Application.LoadLevel(Application.loadedLevel);
+                SceneManager.LoadScene("Fase01");
             }
         }
 

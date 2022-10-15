@@ -30,16 +30,21 @@ namespace Codigo.Scripts.Entity.character
 
         private void BulletCollisions(Character character)
         {
-            // se bala do jogador, toca o inimigo ou a bala do inimigo toca o jogador
+            // se bala do jogador, toca o inimigo
             if (Type.Equals(CharacterType.PLAYER_BULLET) && character.Type.Equals(CharacterType.ENEMY))
             {
-                Debug.Log(AttackDamage);
                 character.CurrentHp -= AttackDamage;
                 Destroy(gameObject);
             }
             // se bala do jogador, toca um obstáculo
             if (Type.Equals(CharacterType.PLAYER_BULLET) && character.Type.Equals(CharacterType.OBSTACLE))
             {
+                Destroy(gameObject);
+            }
+            // se bala do inimigo, toca o player
+            if (Type.Equals(CharacterType.ENEMY_BULLET) && character.Type.Equals(CharacterType.PLAYER))
+            {
+                character.CurrentHp -= AttackDamage;
                 Destroy(gameObject);
             }
         }

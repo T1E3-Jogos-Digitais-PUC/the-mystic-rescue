@@ -11,7 +11,7 @@ namespace Codigo.Scripts.Entity.enemy.stage1
         void Update()
         {
             EnemyMovement();
-            SelfDestroy(20.0f);
+            SelfDestroy(30.0f);
         }
         
         private void EnemyMovement()
