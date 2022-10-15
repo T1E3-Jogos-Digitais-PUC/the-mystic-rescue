@@ -27,7 +27,8 @@ namespace Codigo.Scripts.Entity.enemy.stage1
                     // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
                     Character bullet = instantiatedBullet.GetComponent<Character>();
                     bullet.AttackDamage *= ParentCharacter.AttackDamage;
-                    NextFire = ParentCharacter.FireRate;
+                    // NextFire = ParentCharacter.FireRate;
+                    NextFire = 0.9f;
                 }
                 NextFire -= Time.deltaTime;
             }
