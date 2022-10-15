@@ -136,7 +136,7 @@ MonoBehaviour:
   CurrentHp: 10
   HitDamage: 6
   AttackDamage: 1.2
-  FireRate: 0.65
+  FireRate: 0.9
   Type: 1
 --- !u!65 &5618886902161444131
 BoxCollider:

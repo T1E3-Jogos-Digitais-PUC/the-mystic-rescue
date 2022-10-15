@@ -7,7 +7,6 @@ namespace Codigo.Scripts.Entity.enemy.stage1
 {
     public class EnemySnakePurple: Character
     {
-        private float Vertical = -1;
         void Update()
         {
             EnemyMovement();

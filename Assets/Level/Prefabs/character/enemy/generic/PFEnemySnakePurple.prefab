@@ -165,7 +165,7 @@ MonoBehaviour:
   CurrentHp: 15
   HitDamage: 2
   AttackDamage: 1.1
-  FireRate: 0.75
+  FireRate: 1.25
   Type: 1
 --- !u!1001 &6111107810392359251
 PrefabInstance:

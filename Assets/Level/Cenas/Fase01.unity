@@ -1122,8 +1122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9e05a8994247c6a38d588059b8d220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RandomEnemyRespawnMaxTimer: 0.5
+  RandomEnemyRespawnMaxTimer: 2.5
   PFRandomEnemy1: {fileID: 7179261229017394339, guid: e608aa0d59269f54cb1bb682311342f9, type: 3}
+  PFRandomEnemy2: {fileID: 7179261229017394339, guid: d826ee892a5accb49bf9c43681956b64, type: 3}
 --- !u!4 &797772744
 Transform:
   m_ObjectHideFlags: 0
@@ -2066,7 +2067,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -833, y: 491}
+  m_AnchoredPosition: {x: -433, y: 219}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1346833540
