@@ -1,6 +1,7 @@
 ﻿using System;
 using Codigo.Scripts.Entity.character;
 using UnityEngine;
+using Random = System.Random;
 
 namespace Codigo.Scripts.Entity.bullet.enemy
 {
@@ -8,6 +9,7 @@ namespace Codigo.Scripts.Entity.bullet.enemy
     {
         public float LifeTime = 1.0f;
         public float BulletDir = 1.0f;
+
         void Update()
         {
             BulletMovement();

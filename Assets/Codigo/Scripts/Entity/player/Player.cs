@@ -10,19 +10,30 @@ namespace Codigo.Scripts.Entity.player
 {
     public class Player: Character
     {
-        public TMPro.TextMeshProUGUI text;
-        void Start()
-        {
-
-        }
-        
+        public TMPro.TextMeshProUGUI Text;
+        private bool InInitialCutScene = true;
         void Update()
         {
-            PlayerMovement();
-            text.text = "Life: " + CurrentHp.ToString(CultureInfo.InvariantCulture) + "/" + MaxHp.ToString(CultureInfo.InvariantCulture);
-            if (CurrentHp <= 0)
+            if (InInitialCutScene)
             {
-                SceneManager.LoadScene("Fase01");
+                InitialCutScene();
+            }
+            else
+            {
+                PlayerMovement();
+            }
+
+            UpdateLifeBar();
+            GameOver();
+        }
+        
+        private void InitialCutScene()
+        {
+            Direction = new Vector3(1, 0, 0);
+            transform.position += Direction * (3.5f * Time.deltaTime);
+            if (transform.position.x >= GameSettings.SCREEN_LIMIT_X[0] + (GameSettings.SCREEN_LIMIT_X[1] / 4))
+            {
+                InInitialCutScene = false;
             }
         }
 
@@ -46,6 +57,19 @@ namespace Codigo.Scripts.Entity.player
 
             Direction = new Vector3(horizontal, vertical, 0);
             transform.position += Direction * (Speed * Time.deltaTime);
+        }
+        
+        private void UpdateLifeBar()
+        {
+            Text.text = "Life: " + CurrentHp.ToString(CultureInfo.InvariantCulture) + "/" + MaxHp.ToString(CultureInfo.InvariantCulture);
+        }
+        
+        private void GameOver()
+        {
+            if (CurrentHp <= 0)
+            {
+                SceneManager.LoadScene("Fase01");
+            }
         }
     }
 }
