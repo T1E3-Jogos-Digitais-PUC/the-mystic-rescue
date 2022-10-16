@@ -14,7 +14,7 @@ namespace Codigo.Scripts.Entity.player
 
         private void Start()
         {
-            ParentCharacter = Character.GetCharacterGameObject(gameObject);
+            ParentCharacter = Character.GetParentCharacterGameObject(gameObject);
             NextFire = 0.0f;
         }
 
@@ -22,7 +22,7 @@ namespace Codigo.Scripts.Entity.player
         {
             if (ParentCharacter)
             {
-                if (Input.GetButton("Fire1") && NextFire <= 0.0f && ParentCharacter)
+                if (Input.GetButton("Fire1") && NextFire <= 0.0f)
                 {
                     GameObject instantiatedBullet = Instantiate(Prefab, transform.position, transform.rotation);
                     // ReSharper disable once Unity.PerformanceCriticalCodeInvocation

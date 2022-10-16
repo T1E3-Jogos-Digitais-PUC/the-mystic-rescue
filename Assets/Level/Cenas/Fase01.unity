@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9e05a8994247c6a38d588059b8d220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RandomEnemyRespawnMaxTimer: 2.5
+  RandomEnemyRespawnMaxTimer: 1.5
   PFRandomEnemy1: {fileID: 7179261229017394339, guid: e608aa0d59269f54cb1bb682311342f9, type: 3}
   PFRandomEnemy2: {fileID: 7179261229017394339, guid: d826ee892a5accb49bf9c43681956b64, type: 3}
 --- !u!4 &797772744

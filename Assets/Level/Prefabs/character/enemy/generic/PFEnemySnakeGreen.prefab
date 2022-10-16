@@ -132,11 +132,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1.5
-  MaxHp: 10
-  CurrentHp: 10
-  HitDamage: 6
-  AttackDamage: 1.2
-  FireRate: 0.9
+  MaxHp: 6
+  CurrentHp: 6
+  HitDamage: 1
+  AttackDamage: 2
+  FireRate: 1
   Type: 1
 --- !u!65 &5618886902161444131
 BoxCollider:

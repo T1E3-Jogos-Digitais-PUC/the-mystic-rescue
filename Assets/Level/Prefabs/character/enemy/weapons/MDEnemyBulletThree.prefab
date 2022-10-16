@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2793840602625735568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8338419227466486737}
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221dd08b5c6b4c61868501baae4f6f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  Speed: 8
   MaxHp: 10
   CurrentHp: 10
   HitDamage: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   FireRate: 0
   Type: 3
   LifeTime: 20
-  BulletDir: 1
+  BulletDir: -0.1
 --- !u!4 &7087071232765807054 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3431514285580758744, guid: b0f3245c0f793ac41a670e5d8547520d, type: 3}
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221dd08b5c6b4c61868501baae4f6f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  Speed: 8
   MaxHp: 10
   CurrentHp: 10
   HitDamage: 0
@@ -223,7 +223,7 @@ MonoBehaviour:
   FireRate: 0
   Type: 3
   LifeTime: 20
-  BulletDir: -1
+  BulletDir: 0.1
 --- !u!1001 &8624321162972496036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -231,6 +231,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6682886669750815058}
     m_Modifications:
+    - target: {fileID: -6671478820360785246, guid: b0f3245c0f793ac41a670e5d8547520d, type: 3}
+      propertyPath: Speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -6671478820360785246, guid: b0f3245c0f793ac41a670e5d8547520d, type: 3}
       propertyPath: AttackDamage
       value: 1.5
@@ -283,8 +287,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: MDEnemyBulletMain2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6671478820360785246, guid: b0f3245c0f793ac41a670e5d8547520d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b0f3245c0f793ac41a670e5d8547520d, type: 3}
+--- !u!1 &6354735654271987320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3431514285580758748, guid: b0f3245c0f793ac41a670e5d8547520d, type: 3}
+  m_PrefabInstance: {fileID: 8624321162972496036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7303859035537172556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6354735654271987320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221dd08b5c6b4c61868501baae4f6f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 8
+  MaxHp: 10
+  CurrentHp: 10
+  HitDamage: 0
+  AttackDamage: 1.5
+  FireRate: 0
+  Type: 3
+  LifeTime: 20
+  BulletDir: 0
 --- !u!4 &6354735654271987324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3431514285580758744, guid: b0f3245c0f793ac41a670e5d8547520d, type: 3}
