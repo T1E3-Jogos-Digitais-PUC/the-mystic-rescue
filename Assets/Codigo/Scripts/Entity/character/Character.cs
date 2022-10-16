@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Codigo.Scripts.Entity.enemy.stage1;
 using Codigo.Scripts.Entity.player;
 using UnityEngine;
@@ -19,7 +20,7 @@ namespace Codigo.Scripts.Entity.character
 
         void OnCollisionEnter(Collision collision)
         {
-            Character character = GetCharacterGameObject(collision.gameObject);
+            Character character = GetParentCharacterGameObject(collision.gameObject);
             if (character)
             {
                 BulletCollisions(character);
@@ -66,7 +67,7 @@ namespace Codigo.Scripts.Entity.character
             }
         }
 
-        public static Character GetCharacterGameObject(GameObject cGameObject)
+        public static Character GetParentCharacterGameObject(GameObject cGameObject)
         {
             if (cGameObject)
             {
@@ -76,7 +77,7 @@ namespace Codigo.Scripts.Entity.character
                 }
                 try
                 {
-                    return GetCharacterGameObject(cGameObject.transform.parent.gameObject);
+                    return GetParentCharacterGameObject(cGameObject.transform.parent.gameObject);
                 }
                 catch (Exception e)
                 {
@@ -84,8 +85,27 @@ namespace Codigo.Scripts.Entity.character
                     return null;
                 }
             }
-
             return null;
+        }
+        
+        public static List<Character> GetChildrenCharacterGameObject(GameObject cGameObject)
+        {
+            List<Character> characters = new List<Character>();
+            if (cGameObject)
+            {
+                foreach (Transform child in cGameObject.transform)
+                {
+                    if (child.GetComponent<Character>())
+                    {
+                        characters.Add(child.GetComponent<Character>());
+                    }
+                    else
+                    {
+                        characters.AddRange(GetChildrenCharacterGameObject(child.gameObject));
+                    }
+                }
+            }
+            return characters;
         }
     }
 }

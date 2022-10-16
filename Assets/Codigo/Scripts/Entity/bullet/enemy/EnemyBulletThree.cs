@@ -7,7 +7,7 @@ namespace Codigo.Scripts.Entity.bullet.enemy
     public class EnemyBulletThree: Character
     {
         public float LifeTime = 1.0f;
-        public int BulletDir = 1;
+        public float BulletDir = 1.0f;
         void Update()
         {
             BulletMovement();

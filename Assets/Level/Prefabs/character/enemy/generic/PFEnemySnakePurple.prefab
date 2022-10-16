@@ -160,12 +160,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa44cae04b141ce8af88992c021f2e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2.5
-  MaxHp: 15
-  CurrentHp: 15
-  HitDamage: 2
-  AttackDamage: 1.1
-  FireRate: 1.25
+  Speed: 2
+  MaxHp: 10
+  CurrentHp: 10
+  HitDamage: 3
+  AttackDamage: 1.2
+  FireRate: 3.5
   Type: 1
 --- !u!1001 &2868238686435984343
 PrefabInstance:
@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1696675540587411167, guid: b1e43d3a31eb6fc45b152a1d6c3b9fc2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8
+      value: -0.87
       objectReference: {fileID: 0}
     - target: {fileID: 1696675540587411167, guid: b1e43d3a31eb6fc45b152a1d6c3b9fc2, type: 3}
       propertyPath: m_LocalPosition.y
