@@ -16,6 +16,8 @@ namespace Codigo.Scripts.Entity.character
         public float FireRate;
         public CharacterType Type;
 
+        public GameObject Explosion = null;
+
         protected Vector3 Direction { get; set; }
 
         void OnCollisionEnter(Collision collision)
@@ -37,6 +39,12 @@ namespace Codigo.Scripts.Entity.character
             {
                 character.CurrentHp -= AttackDamage;
                 Destroy(gameObject);
+
+                if (Explosion != null)
+                {
+                    GameObject instantiatedExplosion = Instantiate(Explosion, transform.position, transform.rotation);
+                    Destroy(instantiatedExplosion, 0.5f);
+                }
             }
             // se bala do jogador, toca um obstáculo
             if (Type.Equals(CharacterType.PLAYER_BULLET) && character.Type.Equals(CharacterType.OBSTACLE))

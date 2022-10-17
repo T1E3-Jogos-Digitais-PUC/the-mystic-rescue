@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Codigo.Scripts.Entity.bullet.player
 {
+    
     public class PlayerBulletMain: Character
     {
         public float LifeTime = 1.0f;

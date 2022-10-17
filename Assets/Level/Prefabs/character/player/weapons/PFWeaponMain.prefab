@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3157f019b0744b387b9de52755b0dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 3431514285580758748, guid: a643e9275f974a140a1f7852f5d1a89f, type: 3}
+  Prefab: {fileID: 6531505974510435515, guid: 045d2e753f526334da0d9f2c802223bc, type: 3}
   FireSound: {fileID: 7383718497197436850}
 --- !u!82 &7383718497197436850
 AudioSource:
