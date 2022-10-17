@@ -26,6 +26,7 @@ namespace Codigo.Scripts.Entity.character
                 BulletCollisions(character);
                 EnemyPlayerCollisions(character);
                 DieWhenHpLowerZero();
+                SelfDestroyBulletWhenLeftTheScreen();
             }
         }
 
@@ -64,6 +65,20 @@ namespace Codigo.Scripts.Entity.character
             if (CurrentHp <= 0 && !Type.Equals(CharacterType.PLAYER))
             {
                 Destroy(gameObject);
+            }
+        }
+        
+        private void SelfDestroyBulletWhenLeftTheScreen()
+        {
+            if (Type.Equals(CharacterType.PLAYER_BULLET) || Type.Equals(CharacterType.ENEMY_BULLET))
+            {
+                if (transform.position.x < GameSettings.SCREEN_LIMIT_X[0] - 1.0f
+                    || transform.position.x > GameSettings.SCREEN_LIMIT_X[1] + 1.0f
+                    || transform.position.y < GameSettings.SCREEN_LIMIT_Y[0] - 1.0f
+                    || transform.position.y > GameSettings.SCREEN_LIMIT_X[1] + 1.0f)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
 

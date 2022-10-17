@@ -1021,10 +1021,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9e05a8994247c6a38d588059b8d220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RandomEnemyRespawnMaxTimer: 1.5
   Player: {fileID: 1022253552225114539, guid: 43b02d7e13b78d34097b48ee720a0dd1, type: 3}
-  PFRandomEnemy1: {fileID: 7179261229017394339, guid: e608aa0d59269f54cb1bb682311342f9, type: 3}
-  PFRandomEnemy2: {fileID: 7179261229017394339, guid: d826ee892a5accb49bf9c43681956b64, type: 3}
+  PFEnemy1: {fileID: 7179261229017394339, guid: e608aa0d59269f54cb1bb682311342f9, type: 3}
+  PFEnemy2: {fileID: 7179261229017394339, guid: d826ee892a5accb49bf9c43681956b64, type: 3}
+  PFEnemy3: {fileID: 4970652642000497693, guid: 4f35492d7230f6d4e8a9124ddf4fa02c, type: 3}
 --- !u!4 &797772744
 Transform:
   m_ObjectHideFlags: 0

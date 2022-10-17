@@ -8,11 +8,12 @@ namespace Codigo.Scripts.StageController
 {
     public class Stage1: MonoBehaviour
     {
-        private float RandomEnemyRespawnTimer = 0.0f;
-        public float RandomEnemyRespawnMaxTimer = 0.0f;
+        private float CurrentTimeInSeconds = 0.0f;
+        private int CurrentWave = 1;
         public GameObject Player;
-        public GameObject PFRandomEnemy1;
-        public GameObject PFRandomEnemy2;
+        public GameObject PFEnemy1;
+        public GameObject PFEnemy2;
+        public GameObject PFEnemy3;
 
         private void Start()
         {
@@ -27,30 +28,185 @@ namespace Codigo.Scripts.StageController
 
         private void Update()
         {
-            RespawnEnemy1();
+            CurrentTimeInSeconds += Time.deltaTime;
+            SpawnFirstWave(); //2.5seg
+            SpawnSecondWave(); //6seg
+            SpawnThirdWave(); //11seg
+            SpawnFourthWave(); //15seg
+            SpawnFifthWave(); //20seg
+            SpawnSixthWave(); //26seg
+            SpawnSeventhWave(); //30seg
+            SpawnEighthWave(); //37seg
+            SpawnNinethWave(); //43seg
+            SpawnTenthWave(); //50seg
         }
 
-        // ReSharper disable Unity.PerformanceAnalysis
-        private void RespawnEnemy1()
+        private void SpawnFirstWave()
         {
-            if (RandomEnemyRespawnTimer <= 0)
+            if (CurrentTimeInSeconds >= 2.5f && CurrentWave == 1)
             {
-                GameObject enemy;
-                int randomEnemy = GameHelper.GetRandomInt(1, 100);
-                if (randomEnemy >= 35)
-                {
-                    enemy = PFRandomEnemy1;
-                }
-                else
-                {
-                    enemy = PFRandomEnemy2;
-                }
-                float posX = GameSettings.SCREEN_LIMIT_X[1] + 2.0f;
-                float posY = GameHelper.GetRandomInt((int) Math.Round(GameSettings.SCREEN_LIMIT_Y[0]), (int) Math.Round(GameSettings.SCREEN_LIMIT_Y[1]));
-                Instantiate(enemy, new Vector3(posX, posY, 0.0f), transform.rotation);
-                RandomEnemyRespawnTimer = RandomEnemyRespawnMaxTimer;
+                CurrentTimeInSeconds = 0.0f;
+                CurrentWave++;
+                GenerateEnemy1(2f, -4f);
+                GenerateEnemy1(1f, 0f);
+                GenerateEnemy1(3f, 4f);
             }
-            RandomEnemyRespawnTimer -= Time.deltaTime;
+        }
+        
+        private void SpawnSecondWave()
+        {
+            if (CurrentTimeInSeconds >= 3.5f && CurrentWave == 2)
+            {
+                CurrentTimeInSeconds = 0.0f;
+                CurrentWave++;
+                GenerateEnemy1(2f, -3.2f);
+                GenerateEnemy2(1f, 0f);
+                GenerateEnemy1(2f, 3.2f);
+            }
+        }
+        
+        private void SpawnThirdWave()
+        {
+            if (CurrentTimeInSeconds >= 5f && CurrentWave == 3)
+            {
+                CurrentTimeInSeconds = 0.0f;
+                CurrentWave++;
+                GenerateEnemy1(2f, -4.8f);
+                GenerateEnemy1(2f, 4.8f);
+                GenerateEnemy2(3f, -3f);
+                GenerateEnemy2(1f, 0f);
+                GenerateEnemy2(4f, 3f);
+                GenerateEnemy2(2f, -1.5f);
+                GenerateEnemy2(5f, 1.5f);
+            }
+        }
+        
+        private void SpawnFourthWave()
+        {
+            if (CurrentTimeInSeconds >= 4f && CurrentWave == 4)
+            {
+                CurrentTimeInSeconds = 0.0f;
+                CurrentWave++;
+                GenerateEnemy1(2f, -5.2f);
+                GenerateEnemy1(1f, 0f);
+                GenerateEnemy1(3f, 5.2f);
+            }
+        }
+        
+        private void SpawnFifthWave()
+        {
+            if (CurrentTimeInSeconds >= 5f && CurrentWave == 5)
+            {
+                CurrentTimeInSeconds = 0.0f;
+                CurrentWave++;
+                GenerateEnemy2(1f, -5.2f);
+                GenerateEnemy2(2f, 3.5f);
+                GenerateEnemy2(3f, -2f);
+                GenerateEnemy2(4f, 0f);
+                GenerateEnemy2(3f, 2f);
+                GenerateEnemy2(2f, -3.5f);
+                GenerateEnemy2(1f, 5.2f);
+                GenerateEnemy1(1f, 0f);
+            }
+        }
+        
+        private void SpawnSixthWave()
+        {
+            if (CurrentTimeInSeconds >= 6f && CurrentWave == 6)
+            {
+                CurrentTimeInSeconds = 0.0f;
+                CurrentWave++;
+                GenerateEnemy1(1f, -4f);
+                GenerateEnemy1(2f, -3f);
+                GenerateEnemy1(3f, -2f);
+                GenerateEnemy1(4f, -1f);
+                GenerateEnemy1(5f, 0f);
+                GenerateEnemy1(6f, 1f);
+                GenerateEnemy1(7f, 2f);
+                GenerateEnemy1(8f, 3f);
+                GenerateEnemy1(9f, 4f);
+            }
+        }
+
+        private void SpawnSeventhWave()
+        {
+            if (CurrentTimeInSeconds >= 4f && CurrentWave == 7)
+            {
+                CurrentTimeInSeconds = 0.0f;
+                CurrentWave++;
+                GenerateEnemy2(1f, 0f);
+                GenerateEnemy3(2f, -1.5f);
+                GenerateEnemy3(2f, 1.5f);
+                GenerateEnemy2(3f, -3f); 
+                GenerateEnemy2(3f, 3f); 
+                GenerateEnemy3(4f, -1.5f); 
+                GenerateEnemy3(4f, 1.5f); 
+                GenerateEnemy1(5f, -4.5f); 
+                GenerateEnemy1(5f, 4.5f); 
+                GenerateEnemy2(6f, -5.7f); 
+                GenerateEnemy2(6f, 5.7f); 
+            }
+        }
+        
+        private void SpawnEighthWave()
+        {
+            if (CurrentTimeInSeconds >= 5f && CurrentWave == 8)
+            {
+                CurrentTimeInSeconds = 0.0f;
+                CurrentWave++;
+                GenerateEnemy3(2f, -4f);
+                GenerateEnemy3(1f, 0f);
+                GenerateEnemy3(3f, 4f);
+            }
+        }
+        
+        private void SpawnNinethWave()
+        {
+            if (CurrentTimeInSeconds >= 6f && CurrentWave == 9)
+            {
+                CurrentTimeInSeconds = 0.0f;
+                CurrentWave++;
+                GenerateEnemy1(2f, -4.8f);
+                GenerateEnemy1(2f, 4.8f);
+                GenerateEnemy2(3f, -3f);
+                GenerateEnemy2(1f, 0f);
+                GenerateEnemy3(4f, 3f);
+                GenerateEnemy3(2f, -1.5f);
+                GenerateEnemy3(5f, 1.5f);
+            }
+        }
+        
+        private void SpawnTenthWave()
+        {
+            if (CurrentTimeInSeconds >= 5f && CurrentWave == 10)
+            {
+                CurrentTimeInSeconds = 0.0f;
+                CurrentWave++;
+                GenerateEnemy1(1f, 4f);
+                GenerateEnemy2(2f, 3f);
+                GenerateEnemy3(3f, 2f);
+                GenerateEnemy1(4f, 1f);
+                GenerateEnemy2(5f, 0f);
+                GenerateEnemy3(6f, -1f);
+                GenerateEnemy1(7f, -2f);
+                GenerateEnemy2(8f, -3f);
+                GenerateEnemy3(9f, -4f);
+            }
+        }
+        
+        private void GenerateEnemy1(float pushX, float pushY)
+        {
+            Instantiate(PFEnemy1, new Vector3(GameSettings.SCREEN_LIMIT_X[1] + pushX, pushY, 0.0f), transform.rotation);
+        }
+        
+        private void GenerateEnemy2(float pushX, float pushY)
+        {
+            Instantiate(PFEnemy2, new Vector3(GameSettings.SCREEN_LIMIT_X[1] + pushX, pushY, 0.0f), transform.rotation);
+        }
+        
+        private void GenerateEnemy3(float pushX, float pushY)
+        {
+            Instantiate(PFEnemy3, new Vector3(GameSettings.SCREEN_LIMIT_X[1] + pushX, pushY, 0.0f), transform.rotation);
         }
     }
 }
