@@ -138,6 +138,10 @@ MonoBehaviour:
   AttackDamage: 2
   FireRate: 1
   Type: 1
+  Explosion: {fileID: 0}
+  ItemDrop: {fileID: 2897127163493187192, guid: 0e8e7cbf11867324d87c840e0534962a, type: 3}
+  ItemDropChance: 5
+  IsInvencible: 0
 --- !u!65 &5618886902161444131
 BoxCollider:
   m_ObjectHideFlags: 0

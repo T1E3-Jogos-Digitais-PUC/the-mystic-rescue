@@ -15,7 +15,9 @@ namespace Codigo.Scripts.Entity.character
         public float AttackDamage;
         public float FireRate;
         public CharacterType Type;
-        public GameObject Explosion = null;
+        public GameObject Explosion;
+        public GameObject ItemDrop;
+        public int ItemDropChance;
         public bool IsInvencible = false;
         protected Vector3 Direction { get; set; }
 
@@ -41,10 +43,7 @@ namespace Codigo.Scripts.Entity.character
             // se bala do jogador, toca o inimigo
             if (Type.Equals(CharacterType.PLAYER_BULLET) && character.Type.Equals(CharacterType.ENEMY))
             {
-                if(character.IsInvencible == false)
-                {
-                    character.CurrentHp -= AttackDamage;
-                }
+                character.ReceiveDamage(AttackDamage);
                 Destroy(gameObject);
                 if (Explosion != null)
                 {
@@ -60,10 +59,7 @@ namespace Codigo.Scripts.Entity.character
             // se bala do inimigo, toca o player
             if (Type.Equals(CharacterType.ENEMY_BULLET) && character.Type.Equals(CharacterType.PLAYER))
             {
-                if(character.IsInvencible == false)
-                {
-                    character.CurrentHp -= AttackDamage;
-                }
+                character.ReceiveDamage(AttackDamage);
                 Destroy(gameObject);
             }
         }
@@ -72,14 +68,8 @@ namespace Codigo.Scripts.Entity.character
         {
             if (Type.Equals(CharacterType.ENEMY) && character.Type.Equals(CharacterType.PLAYER))
             {
-                if(character.IsInvencible == false)
-                {
-                    character.CurrentHp -= HitDamage;
-                }
-                if(IsInvencible == false)
-                {
-                    CurrentHp -= character.HitDamage;
-                }
+                character.ReceiveDamage(HitDamage);
+                ReceiveDamage(character.HitDamage);
             }
         }
         
@@ -87,6 +77,18 @@ namespace Codigo.Scripts.Entity.character
         {
             if (CurrentHp <= 0 && !Type.Equals(CharacterType.PLAYER))
             {
+                if (Type.Equals(CharacterType.ENEMY))
+                {
+                    if (ItemDrop != null)
+                    {
+                        int per = GameHelper.GetRandomInt(1, 100);
+                        if (per <= ItemDropChance)
+                        {
+                            var y = GameSettings.SCREEN_LIMIT_Y[1];
+                            Instantiate(ItemDrop, new Vector3(transform.position.x + 2.0f, y, transform.position.z), transform.rotation);
+                        }
+                    }
+                }
                 Destroy(gameObject);
             }
         }
@@ -144,6 +146,52 @@ namespace Codigo.Scripts.Entity.character
                 }
             }
             return characters;
+        }
+        
+        public void ReceiveDamage(float damage)
+        {
+            if(IsInvencible == false)
+            {
+                CurrentHp -= damage;
+            }
+        }
+        
+        public void Heal(float heal)
+        {
+            if(heal + CurrentHp > MaxHp)
+            {
+                CurrentHp = MaxHp;
+            }
+            else
+            {
+                CurrentHp += heal;
+            }
+        }
+        
+        public void IncreaseSpeed(float speed)
+        {
+            Speed += speed;
+        }
+        
+        public void IncreaseFireRate(float fireRate)
+        {
+            FireRate += fireRate;
+        }
+        
+        public void IncreaseAttackDamage(float attackDamage)
+        {
+            AttackDamage += attackDamage;
+        }
+        
+        public void IncreaseHitDamage(float hitDamage)
+        {
+            HitDamage += hitDamage;
+        }
+        
+        public void IncreaseMaxHp(float maxHp)
+        {
+            MaxHp += maxHp;
+            Heal(maxHp);
         }
     }
 }

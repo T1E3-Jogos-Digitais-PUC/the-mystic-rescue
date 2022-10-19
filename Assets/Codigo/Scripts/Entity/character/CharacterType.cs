@@ -7,6 +7,7 @@
         PLAYER_BULLET,
         ENEMY_BULLET,
         OBSTACLE,
+        POWERUP,
         NONE
     }
 }

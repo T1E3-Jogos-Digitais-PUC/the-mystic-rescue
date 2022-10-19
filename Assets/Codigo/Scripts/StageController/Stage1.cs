@@ -23,8 +23,8 @@ namespace Codigo.Scripts.StageController
 
         private void CreatePlayer()
         {
-            Vector3 playerPos = new Vector3(GameSettings.SCREEN_LIMIT_X[0] - 1.0f, 0.0f, 0.0f);
-            Instantiate(Player, playerPos, transform.rotation);
+            // Vector3 playerPos = new Vector3(GameSettings.SCREEN_LIMIT_X[0] - 1.0f, 0.0f, 0.0f);
+            // Instantiate(Player, playerPos, transform.rotation);
         }
 
         private void Update()
@@ -48,9 +48,9 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy1(2f, -4f);
+                GenerateEnemy1(2f, -3.6f);
                 GenerateEnemy1(1f, 0f);
-                GenerateEnemy1(3f, 4f);
+                GenerateEnemy1(2f, 3.6f);
             }
         }
         
@@ -60,9 +60,9 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy1(2f, -3.2f);
-                GenerateEnemy2(1f, 0f);
-                GenerateEnemy1(2f, 3.2f);
+                GenerateEnemy1(1f, -3.2f);
+                GenerateEnemy2(2f, 0f);
+                GenerateEnemy1(1f, 3.2f);
             }
         }
         
@@ -76,8 +76,8 @@ namespace Codigo.Scripts.StageController
                 GenerateEnemy1(2f, 4.8f);
                 GenerateEnemy2(3f, -3f);
                 GenerateEnemy2(1f, 0f);
-                GenerateEnemy2(4f, 3f);
-                GenerateEnemy2(2f, -1.5f);
+                GenerateEnemy2(3f, 3f);
+                GenerateEnemy2(5f, -1.5f);
                 GenerateEnemy2(5f, 1.5f);
             }
         }
@@ -88,9 +88,10 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy1(2f, -5.2f);
-                GenerateEnemy1(1f, 0f);
+                GenerateEnemy1(1f, -1f);
+                GenerateEnemy1(1f, 1f);
                 GenerateEnemy3(3f, 5.2f);
+                GenerateEnemy3(6f, -5.2f);
             }
         }
         
@@ -100,14 +101,12 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy2(1f, -5.2f);
+                GenerateEnemy2(1f, -4.2f);
+                GenerateEnemy2(1f, 4.2f);
                 GenerateEnemy2(2f, 3.5f);
-                GenerateEnemy2(3f, -2f);
-                GenerateEnemy2(4f, 0f);
-                GenerateEnemy2(3f, 2f);
                 GenerateEnemy2(2f, -3.5f);
-                GenerateEnemy3(1f, 5.2f);
-                GenerateEnemy1(1f, 0f);
+                GenerateEnemy2(3f, -2f);
+                GenerateEnemy2(3f, 2f);
             }
         }
         
@@ -136,15 +135,15 @@ namespace Codigo.Scripts.StageController
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
                 GenerateEnemy2(1f, 0f);
-                GenerateEnemy3(2f, -1.5f);
-                GenerateEnemy3(2f, 1.5f);
+                GenerateEnemy3(2f, -1f);
+                GenerateEnemy3(2f, 1f);
                 GenerateEnemy2(3f, -3f); 
                 GenerateEnemy2(3f, 3f); 
-                GenerateEnemy3(4f, -1.5f); 
-                GenerateEnemy3(4f, 1.5f); 
+                GenerateEnemy1(4f, -1.5f); 
+                GenerateEnemy1(4f, 1.5f); 
                 GenerateEnemy1(5f, -4.5f); 
                 GenerateEnemy1(5f, 4.5f); 
-                GenerateEnemy2(6f, -5.7f); 
+                GenerateEnemy3(6f, -5.7f); 
                 GenerateEnemy3(6f, 5.7f); 
             }
         }
@@ -155,9 +154,10 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy3(2f, -4f);
-                GenerateEnemy3(1f, 0f);
-                GenerateEnemy3(3f, 4f);
+                GenerateEnemy3(2.5f, -4.4f);
+                GenerateEnemy3(1f, 1f);
+                GenerateEnemy3(1f, -1f);
+                GenerateEnemy3(2.5f, 4.4f);
             }
         }
         
@@ -167,13 +167,13 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy1(2f, -4.8f);
+                GenerateEnemy3(2f, -4.8f);
                 GenerateEnemy3(2f, 4.8f);
-                GenerateEnemy2(3f, -3f);
+                GenerateEnemy1(3f, -3f);
                 GenerateEnemy2(1f, 0f);
-                GenerateEnemy3(4f, 3f);
-                GenerateEnemy3(2f, -1.5f);
-                GenerateEnemy3(5f, 1.5f);
+                GenerateEnemy1(4f, 3f);
+                GenerateEnemy2(2f, -1.5f);
+                GenerateEnemy2(5f, 1.5f);
             }
         }
         

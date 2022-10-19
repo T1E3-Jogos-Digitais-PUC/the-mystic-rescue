@@ -1,15 +1,16 @@
 ﻿using System.Globalization;
 using Codigo.Scripts.Entity.character;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; // Don't forget this line
+using UnityEngine.UI;
 
 namespace Codigo.Scripts.Entity.player
 {
     public class Player: Character
     {
+        public Image LifeBarRed;
+        public Image LifeBarGreen;
+        
         public TMPro.TextMeshProUGUI Text;
         private bool InInitialCutScene = true;
         void Update()
@@ -40,28 +41,36 @@ namespace Codigo.Scripts.Entity.player
         // ReSharper disable Unity.PerformanceAnalysis
         private void PlayerMovement()
         {
-            float vertical = Input.GetAxis("Vertical");
             float horizontal = Input.GetAxis("Horizontal");
-
-            if ((transform.position.y < GameSettings.SCREEN_LIMIT_Y[0] && vertical < 0) 
-                || (transform.position.y > GameSettings.SCREEN_LIMIT_Y[1] && vertical > 0))
-            {
-                vertical = 0;
-            }
+            float vertical = Input.GetAxis("Vertical");
             
             if ((transform.position.x < GameSettings.SCREEN_LIMIT_X[0] && horizontal < 0) 
                 || (transform.position.x > GameSettings.SCREEN_LIMIT_X[1] && horizontal > 0))
             {
                 horizontal = 0;
             }
+            if ((transform.position.y < GameSettings.SCREEN_LIMIT_Y[0] && vertical < 0) 
+                || (transform.position.y > GameSettings.SCREEN_LIMIT_Y[1] && vertical > 0))
+            {
+                vertical = 0;
+            }
+            
+            // float v = Input.GetAxis("Vertical");
+            float dx = horizontal * Speed * Time.deltaTime;
+            float dy = vertical * Speed * Time.deltaTime;
+            transform.position = new Vector3(transform.position.x+dx, transform.position.y+dy, 0);
 
-            Direction = new Vector3(horizontal, vertical, 0);
-            transform.position += Direction * (Speed * Time.deltaTime);
         }
         
         private void UpdateLifeBar()
         {
-            Text.text = "Life: " + CurrentHp.ToString(CultureInfo.InvariantCulture) + "/" + MaxHp.ToString(CultureInfo.InvariantCulture);
+            if (LifeBarRed && LifeBarGreen)
+            {
+                var transform1 = LifeBarGreen.transform;
+                Vector3 lifeBarScale = transform1.localScale;
+                lifeBarScale.x = CurrentHp / MaxHp;
+                transform1.localScale = lifeBarScale;
+            }
         }
         
         private void GameOver()

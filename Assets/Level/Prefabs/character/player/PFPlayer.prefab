@@ -60,6 +60,11 @@ MonoBehaviour:
   FireRate: 0.04
   Type: 0
   Explosion: {fileID: 0}
+  ItemDrop: {fileID: 0}
+  ItemDropChance: 0
+  IsInvencible: 0
+  LifeBarRed: {fileID: 0}
+  LifeBarGreen: {fileID: 0}
   Text: {fileID: 6752671953258593995, guid: 66f9f10def5abf644ac80f5fa3625271, type: 3}
 --- !u!222 &7769468499005676085
 CanvasRenderer:
