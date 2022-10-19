@@ -50,15 +50,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e4c3b4b80d4bbd8a37b27fcdf758fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 15
+  Speed: 80
   MaxHp: 10
   CurrentHp: 10
   HitDamage: 0
   AttackDamage: 1.5
   FireRate: 0
   Type: 2
-  LifeTime: 2
   Explosion: {fileID: 7446620007608068009, guid: cc0f9dc6375d42349ad389f15f139f57, type: 3}
+  LifeTime: 2
 --- !u!135 &7072310203971304521
 SphereCollider:
   m_ObjectHideFlags: 0

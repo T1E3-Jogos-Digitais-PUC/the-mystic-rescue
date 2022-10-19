@@ -11,7 +11,6 @@ namespace Codigo.Scripts.Entity.enemy.stage1
         void Update()
         {
             EnemyMovement();
-            SelfDestroy(30.0f);
         }
         
         private void EnemyMovement()
@@ -28,11 +27,6 @@ namespace Codigo.Scripts.Entity.enemy.stage1
             
             Direction = new Vector3(-1, Vertical, 0);
             transform.position += Direction * (Speed * Time.deltaTime);
-        }
-        
-        private void SelfDestroy(float time)
-        {
-            Destroy(gameObject, time);
         }
     }
 }

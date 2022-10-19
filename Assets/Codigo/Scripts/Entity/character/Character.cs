@@ -15,10 +15,14 @@ namespace Codigo.Scripts.Entity.character
         public float AttackDamage;
         public float FireRate;
         public CharacterType Type;
-
         public GameObject Explosion = null;
-
+        public bool IsInvencible = false;
         protected Vector3 Direction { get; set; }
+
+        private void Start()
+        {
+            IsInvencible = false;
+        }
 
         void OnCollisionEnter(Collision collision)
         {
@@ -37,9 +41,11 @@ namespace Codigo.Scripts.Entity.character
             // se bala do jogador, toca o inimigo
             if (Type.Equals(CharacterType.PLAYER_BULLET) && character.Type.Equals(CharacterType.ENEMY))
             {
-                character.CurrentHp -= AttackDamage;
+                if(character.IsInvencible == false)
+                {
+                    character.CurrentHp -= AttackDamage;
+                }
                 Destroy(gameObject);
-
                 if (Explosion != null)
                 {
                     GameObject instantiatedExplosion = Instantiate(Explosion, transform.position, transform.rotation);
@@ -54,7 +60,10 @@ namespace Codigo.Scripts.Entity.character
             // se bala do inimigo, toca o player
             if (Type.Equals(CharacterType.ENEMY_BULLET) && character.Type.Equals(CharacterType.PLAYER))
             {
-                character.CurrentHp -= AttackDamage;
+                if(character.IsInvencible == false)
+                {
+                    character.CurrentHp -= AttackDamage;
+                }
                 Destroy(gameObject);
             }
         }
@@ -63,8 +72,14 @@ namespace Codigo.Scripts.Entity.character
         {
             if (Type.Equals(CharacterType.ENEMY) && character.Type.Equals(CharacterType.PLAYER))
             {
-                character.CurrentHp -= HitDamage;
-                CurrentHp -= character.HitDamage;
+                if(character.IsInvencible == false)
+                {
+                    character.CurrentHp -= HitDamage;
+                }
+                if(IsInvencible == false)
+                {
+                    CurrentHp -= character.HitDamage;
+                }
             }
         }
         

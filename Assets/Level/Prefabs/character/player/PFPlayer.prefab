@@ -57,8 +57,9 @@ MonoBehaviour:
   CurrentHp: 10
   HitDamage: 100
   AttackDamage: 1.1
-  FireRate: 0.05
+  FireRate: 0.04
   Type: 0
+  Explosion: {fileID: 0}
   Text: {fileID: 6752671953258593995, guid: 66f9f10def5abf644ac80f5fa3625271, type: 3}
 --- !u!222 &7769468499005676085
 CanvasRenderer:

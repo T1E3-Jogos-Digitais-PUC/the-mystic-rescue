@@ -14,6 +14,7 @@ namespace Codigo.Scripts.StageController
         public GameObject PFEnemy1;
         public GameObject PFEnemy2;
         public GameObject PFEnemy3;
+        public GameObject PFEnemy4;
 
         private void Start()
         {
@@ -89,7 +90,7 @@ namespace Codigo.Scripts.StageController
                 CurrentWave++;
                 GenerateEnemy1(2f, -5.2f);
                 GenerateEnemy1(1f, 0f);
-                GenerateEnemy1(3f, 5.2f);
+                GenerateEnemy3(3f, 5.2f);
             }
         }
         
@@ -105,7 +106,7 @@ namespace Codigo.Scripts.StageController
                 GenerateEnemy2(4f, 0f);
                 GenerateEnemy2(3f, 2f);
                 GenerateEnemy2(2f, -3.5f);
-                GenerateEnemy2(1f, 5.2f);
+                GenerateEnemy3(1f, 5.2f);
                 GenerateEnemy1(1f, 0f);
             }
         }
@@ -124,7 +125,7 @@ namespace Codigo.Scripts.StageController
                 GenerateEnemy1(6f, 1f);
                 GenerateEnemy1(7f, 2f);
                 GenerateEnemy1(8f, 3f);
-                GenerateEnemy1(9f, 4f);
+                GenerateEnemy3(9f, 4f);
             }
         }
 
@@ -144,7 +145,7 @@ namespace Codigo.Scripts.StageController
                 GenerateEnemy1(5f, -4.5f); 
                 GenerateEnemy1(5f, 4.5f); 
                 GenerateEnemy2(6f, -5.7f); 
-                GenerateEnemy2(6f, 5.7f); 
+                GenerateEnemy3(6f, 5.7f); 
             }
         }
         
@@ -167,7 +168,7 @@ namespace Codigo.Scripts.StageController
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
                 GenerateEnemy1(2f, -4.8f);
-                GenerateEnemy1(2f, 4.8f);
+                GenerateEnemy3(2f, 4.8f);
                 GenerateEnemy2(3f, -3f);
                 GenerateEnemy2(1f, 0f);
                 GenerateEnemy3(4f, 3f);
@@ -182,7 +183,7 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy1(1f, 4f);
+                GenerateEnemy3(1f, 4f);
                 GenerateEnemy2(2f, 3f);
                 GenerateEnemy3(3f, 2f);
                 GenerateEnemy1(4f, 1f);
@@ -191,6 +192,7 @@ namespace Codigo.Scripts.StageController
                 GenerateEnemy1(7f, -2f);
                 GenerateEnemy2(8f, -3f);
                 GenerateEnemy3(9f, -4f);
+                GenerateEnemy4(30f, 0f);
             }
         }
         
@@ -207,6 +209,10 @@ namespace Codigo.Scripts.StageController
         private void GenerateEnemy3(float pushX, float pushY)
         {
             Instantiate(PFEnemy3, new Vector3(GameSettings.SCREEN_LIMIT_X[1] + pushX, pushY, 0.0f), transform.rotation);
+        }
+        private void GenerateEnemy4(float pushX, float pushY)
+        {
+            Instantiate(PFEnemy4, new Vector3(GameSettings.SCREEN_LIMIT_X[1] + pushX, pushY, 0.0f), transform.rotation);
         }
     }
 }
