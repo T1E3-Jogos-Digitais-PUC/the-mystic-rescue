@@ -171,6 +171,7 @@ MonoBehaviour:
   ItemDrop: {fileID: 0}
   ItemDropChance: 0
   IsInvencible: 0
+  Score: 1048
 --- !u!1001 &4645368414026277885
 PrefabInstance:
   m_ObjectHideFlags: 0

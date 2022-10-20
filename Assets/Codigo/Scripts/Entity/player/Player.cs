@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
 using Codigo.Scripts.Entity.character;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,8 +12,7 @@ namespace Codigo.Scripts.Entity.player
     {
         public Image LifeBarRed;
         public Image LifeBarGreen;
-        
-        public TMPro.TextMeshProUGUI Text;
+        public TMPro.TextMeshProUGUI ScoreText;
         private bool InInitialCutScene = true;
         void Update()
         {
@@ -25,9 +26,9 @@ namespace Codigo.Scripts.Entity.player
             }
 
             UpdateLifeBar();
+            UpdateScore();
             GameOver();
         }
-        
         private void InitialCutScene()
         {
             Direction = new Vector3(1, 0, 0);
@@ -70,9 +71,31 @@ namespace Codigo.Scripts.Entity.player
                 Vector3 lifeBarScale = transform1.localScale;
                 lifeBarScale.x = CurrentHp / MaxHp;
                 transform1.localScale = lifeBarScale;
+                StartCoroutine(DecreasingRedBar(lifeBarScale));
             }
         }
+
+        IEnumerator DecreasingRedBar(Vector3 newScale)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Vector3 redBarScale = LifeBarRed.transform.localScale;
+            while (LifeBarRed.transform.localScale.x > newScale.x)
+            {
+                redBarScale.x -= Time.deltaTime * 0.10f;
+                LifeBarRed.transform.localScale = redBarScale;
+                yield return null;
+            }
+            LifeBarRed.transform.localScale = newScale;
+        }
         
+        private void UpdateScore()
+        {
+            if (ScoreText)
+            {
+                ScoreText.text = Score.ToString(CultureInfo.InvariantCulture);
+            }
+        }
+
         private void GameOver()
         {
             if (CurrentHp <= 0)

@@ -9,7 +9,7 @@ namespace Codigo.Scripts.Entity.player
         public float IncFireRate = 0;
         public float IncAttackDamage = 0;
         public float IncMaxHp = 0;
-        public float Heal = 0;
+        public float HealPoints = 0;
         public GameObject Bullet;
         
         void OnCollisionEnter(Collision collision)
@@ -21,7 +21,7 @@ namespace Codigo.Scripts.Entity.player
                 character.IncreaseFireRate(IncFireRate);
                 character.IncreaseAttackDamage(IncAttackDamage);    
                 character.IncreaseMaxHp(IncMaxHp);
-                character.Heal(Heal);
+                character.Heal(HealPoints);
                 Destroy(gameObject);
             }
         }

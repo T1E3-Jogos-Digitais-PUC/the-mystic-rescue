@@ -19,6 +19,7 @@ namespace Codigo.Scripts.Entity.character
         public GameObject ItemDrop;
         public int ItemDropChance;
         public bool IsInvencible = false;
+        public int Score = 0;
         protected Vector3 Direction { get; set; }
 
         private void Start()
@@ -34,7 +35,6 @@ namespace Codigo.Scripts.Entity.character
                 BulletCollisions(character);
                 EnemyPlayerCollisions(character);
                 DieWhenHpLowerZero();
-                SelfDestroyBulletWhenLeftTheScreen();
             }
         }
 
@@ -88,25 +88,14 @@ namespace Codigo.Scripts.Entity.character
                             Instantiate(ItemDrop, new Vector3(transform.position.x + 2.0f, y, transform.position.z), transform.rotation);
                         }
                     }
+                    var playerGameObject = GameObject.FindWithTag("Player");
+                    var player = GetParentCharacterGameObject(playerGameObject);
+                    player.Score += Score;
                 }
                 Destroy(gameObject);
             }
         }
         
-        private void SelfDestroyBulletWhenLeftTheScreen()
-        {
-            if (Type.Equals(CharacterType.PLAYER_BULLET) || Type.Equals(CharacterType.ENEMY_BULLET))
-            {
-                if (transform.position.x < GameSettings.SCREEN_LIMIT_X[0] - 1.0f
-                    || transform.position.x > GameSettings.SCREEN_LIMIT_X[1] + 1.0f
-                    || transform.position.y < GameSettings.SCREEN_LIMIT_Y[0] - 1.0f
-                    || transform.position.y > GameSettings.SCREEN_LIMIT_X[1] + 1.0f)
-                {
-                    Destroy(gameObject);
-                }
-            }
-        }
-
         public static Character GetParentCharacterGameObject(GameObject cGameObject)
         {
             if (cGameObject)

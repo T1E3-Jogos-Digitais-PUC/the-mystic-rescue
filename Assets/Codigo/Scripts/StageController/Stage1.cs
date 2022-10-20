@@ -15,10 +15,16 @@ namespace Codigo.Scripts.StageController
         public GameObject PFEnemy2;
         public GameObject PFEnemy3;
         public GameObject PFEnemy4;
+        public AudioSource BGSong;
+        public AudioSource BGBossSong;
 
         private void Start()
         {
             CreatePlayer();
+            if (BGSong)
+            {
+                BGSong.Play();
+            }
         }
 
         private void CreatePlayer()
@@ -40,6 +46,7 @@ namespace Codigo.Scripts.StageController
             SpawnEighthWave(); //37seg
             SpawnNinethWave(); //43seg
             SpawnTenthWave(); //50seg
+            SpawnBoss(); //60seg
         }
 
         private void SpawnFirstWave()
@@ -192,7 +199,25 @@ namespace Codigo.Scripts.StageController
                 GenerateEnemy1(7f, -2f);
                 GenerateEnemy2(8f, -3f);
                 GenerateEnemy3(9f, -4f);
-                GenerateEnemy4(30f, 0f);
+            }
+        }
+        
+        private void SpawnBoss()
+        {
+            if (CurrentTimeInSeconds >= 10f && CurrentWave == 11)
+            {
+                CurrentTimeInSeconds = 0.0f;
+                CurrentWave++;
+                GenerateEnemy4(14f, 0f);
+            }
+            if (CurrentTimeInSeconds >= 2.5f && CurrentWave == 12)
+            {
+                CurrentTimeInSeconds = 0.0f;
+                CurrentWave++;
+                if (BGSong)
+                {
+                    BGSong.Stop();
+                }
             }
         }
         
@@ -213,6 +238,10 @@ namespace Codigo.Scripts.StageController
         private void GenerateEnemy4(float pushX, float pushY)
         {
             Instantiate(PFEnemy4, new Vector3(GameSettings.SCREEN_LIMIT_X[1] + pushX, pushY, 0.0f), transform.rotation);
+            if (BGBossSong)
+            {
+                BGBossSong.Play();
+            }
         }
     }
 }

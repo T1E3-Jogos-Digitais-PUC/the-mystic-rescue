@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6682886669750815058}
-  - component: {fileID: 634273225999201171}
+  - component: {fileID: -5313656708874544678}
   m_Layer: 0
   m_Name: MDEnemyBulletThree
   m_TagString: Untagged
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &634273225999201171
+--- !u!114 &-5313656708874544678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,10 +44,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2793840602625735568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd52932fec6a44ea93f157dd2297e727, type: 3}
+  m_Script: {fileID: 11500000, guid: caf4db89f0b74547bf9905c94e65dd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfDestruccionTime: 5
+  OutOfScreen: 0
+  OutOfScreenAxisX: 1
+  BySeconds: 6
 --- !u!1001 &5603997132674393878
 PrefabInstance:
   m_ObjectHideFlags: 0

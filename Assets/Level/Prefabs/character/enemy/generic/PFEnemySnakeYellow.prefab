@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 8912025120676963145}
   - component: {fileID: 3419453209208030459}
   - component: {fileID: 1484349560303092332}
+  - component: {fileID: 7810032982399957376}
   m_Layer: 0
   m_Name: PFEnemySnakeYellow
   m_TagString: Untagged
@@ -172,6 +173,7 @@ MonoBehaviour:
   ItemDrop: {fileID: 2897127163493187192, guid: 2891c0c516b76904d917516aadc5aeb6, type: 3}
   ItemDropChance: 10
   IsInvencible: 0
+  Score: 232
 --- !u!114 &1484349560303092332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +190,21 @@ MonoBehaviour:
   Y: 0
   Z: 1.5
   Speed: 1
+--- !u!114 &7810032982399957376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4970652642000497693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf4db89f0b74547bf9905c94e65dd4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutOfScreen: 0
+  OutOfScreenAxisX: 1
+  BySeconds: 0
 --- !u!1001 &7085630096591861296
 PrefabInstance:
   m_ObjectHideFlags: 0

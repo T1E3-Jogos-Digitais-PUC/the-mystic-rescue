@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7146902619740750687}
   - component: {fileID: 7383375603551983433}
   - component: {fileID: -6671478820360785246}
+  - component: {fileID: -535637588444086068}
   m_Layer: 0
   m_Name: MDEnemyBulletMain
   m_TagString: Untagged
@@ -87,6 +88,21 @@ MonoBehaviour:
   ItemDrop: {fileID: 0}
   ItemDropChance: 0
   IsInvencible: 0
+--- !u!114 &-535637588444086068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3431514285580758748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf4db89f0b74547bf9905c94e65dd4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutOfScreen: 0
+  OutOfScreenAxisX: 1
+  BySeconds: 6
 --- !u!1001 &996150122766259551
 PrefabInstance:
   m_ObjectHideFlags: 0
