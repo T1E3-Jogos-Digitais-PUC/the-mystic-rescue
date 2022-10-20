@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8aace254e0e7a9944960f5cd24ed2c8d, type: 2}
+  - {fileID: 2100000, guid: 21b6431e843370549896b1560366f49a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -165,9 +165,11 @@ MonoBehaviour:
   CurrentHp: 600
   HitDamage: 3
   AttackDamage: 1.5
-  FireRate: 0.35
+  FireRate: 0.55
   Type: 1
   Explosion: {fileID: 0}
+  ItemDrop: {fileID: 0}
+  ItemDropChance: 0
   IsInvencible: 0
 --- !u!1001 &4645368414026277885
 PrefabInstance:

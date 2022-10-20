@@ -306,7 +306,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 7037026588bb8004da7d96fbc2886cc8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: aef06ac8626d1fa44ad8eaf30f622386, type: 2}
+      objectReference: {fileID: 2100000, guid: 8aace254e0e7a9944960f5cd24ed2c8d, type: 2}
     - target: {fileID: 919132149155446097, guid: 7037026588bb8004da7d96fbc2886cc8, type: 3}
       propertyPath: m_Name
       value: pwrup_estrela

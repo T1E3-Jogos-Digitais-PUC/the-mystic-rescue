@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2049970595420329766}
   - component: {fileID: 3775707548111407652}
-  - component: {fileID: 7769468499005676085}
-  - component: {fileID: 8286642656574556086}
   m_Layer: 0
   m_Name: PFPlayer
   m_TagString: Untagged
@@ -65,49 +63,7 @@ MonoBehaviour:
   IsInvencible: 0
   LifeBarRed: {fileID: 0}
   LifeBarGreen: {fileID: 0}
-  Text: {fileID: 6752671953258593995, guid: 66f9f10def5abf644ac80f5fa3625271, type: 3}
---- !u!222 &7769468499005676085
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022253552225114539}
-  m_CullTransparentMesh: 1
---- !u!114 &8286642656574556086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022253552225114539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.092866674, g: 0.764151, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "OL\xC1\n"
+  Text: {fileID: 0}
 --- !u!1001 &5465993234118239636
 PrefabInstance:
   m_ObjectHideFlags: 0
