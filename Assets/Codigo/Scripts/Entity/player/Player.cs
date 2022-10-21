@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using Codigo.Scripts.Entity.character;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,17 +13,25 @@ namespace Codigo.Scripts.Entity.player
     {
         public Image LifeBarRed;
         public Image LifeBarGreen;
+        public Image ShieldBarBlue;
         public TMPro.TextMeshProUGUI ScoreText;
         private bool InInitialCutScene = true;
         private bool InFinalCutScene = false;
+        public GameObject ShieldGameObject;
+        private float NextFire = 0.0f;
         
         private void Start()
         {
             Direction = new Vector3(1, 0, 0);
+            if (ShieldGameObject != null)
+            {
+                ShieldGameObject.SetActive(false);
+            }
         }
         
         void Update()
         {
+            ActiveShield();
             if (!InFinalCutScene)
             {
                 if (InInitialCutScene)
@@ -42,6 +51,20 @@ namespace Codigo.Scripts.Entity.player
             {
                 FinalCutScene();
             }
+        }
+
+        private void ActiveShield()
+        {
+            UpdateShieldBar();
+            if (NextFire <= 0.0f && ShieldGameObject && ShieldGameObject.activeSelf == false)
+            {
+                if (Input.GetMouseButtonDown(1))
+                {
+                    ShieldGameObject.SetActive(true);
+                    NextFire = 5f;
+                }
+            }
+            NextFire -= Time.deltaTime;
         }
 
         private void InitialCutScene()
@@ -120,6 +143,23 @@ namespace Codigo.Scripts.Entity.player
             LifeBarRed.transform.localScale = newScale;
         }
         
+        //make a method to update the shield bar
+        private void UpdateShieldBar()
+        {
+            if (ShieldBarBlue)
+            {
+                var transform1 = ShieldBarBlue.transform;
+                Vector3 shieldBarScale = transform1.localScale;
+                var cooldown = NextFire / 5f;
+                if (cooldown <= 0)
+                {
+                    cooldown = 1;
+                }
+                shieldBarScale.x = cooldown;
+                transform1.localScale = shieldBarScale;
+            }
+        }
+
         private void UpdateScore()
         {
             if (ScoreText)

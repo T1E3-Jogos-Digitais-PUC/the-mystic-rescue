@@ -8,6 +8,7 @@
         ENEMY_BULLET,
         OBSTACLE,
         POWERUP,
+        SHIELD,
         NONE
     }
 }

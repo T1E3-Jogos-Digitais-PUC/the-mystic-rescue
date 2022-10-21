@@ -32,9 +32,19 @@ namespace Codigo.Scripts.Entity.character
             Character character = GetParentCharacterGameObject(collision.gameObject);
             if (character)
             {
+                ShieldCollision(character);
                 BulletCollisions(character);
                 EnemyPlayerCollisions(character);
                 DieWhenHpLowerZero();
+            }
+        }
+
+        private void ShieldCollision(Character character)
+        {
+            // se o shield, toca a bala inimiga
+            if (Type.Equals(CharacterType.SHIELD) && character.Type.Equals(CharacterType.ENEMY_BULLET))
+            {
+                Destroy(character.gameObject);
             }
         }
 

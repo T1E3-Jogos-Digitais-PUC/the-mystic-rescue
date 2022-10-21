@@ -12,8 +12,10 @@ namespace Codigo.Scripts.shared
 
         private void Update()
         {
-            var dt = (Speed * Time.deltaTime);
-            transform.Rotate(X * dt, Y * dt, Z + dt);
+            var x = X * Speed * Time.deltaTime;
+            var y = Y * Speed * Time.deltaTime;
+            var z = Z * Speed * Time.deltaTime;
+            transform.Rotate(x, y, z);
         }
     }
 }

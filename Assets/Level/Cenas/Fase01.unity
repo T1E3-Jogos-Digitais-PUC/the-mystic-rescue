@@ -2841,6 +2841,26 @@ PrefabInstance:
       propertyPath: LifeBarGreen
       value: 
       objectReference: {fileID: 1343058192}
+    - target: {fileID: 3775707548111407652, guid: 43b02d7e13b78d34097b48ee720a0dd1, type: 3}
+      propertyPath: ShieldBarBlue
+      value: 
+      objectReference: {fileID: 1987762064}
+    - target: {fileID: 8914277723464321239, guid: 43b02d7e13b78d34097b48ee720a0dd1, type: 3}
+      propertyPath: X
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914277723464321239, guid: 43b02d7e13b78d34097b48ee720a0dd1, type: 3}
+      propertyPath: Y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914277723464321239, guid: 43b02d7e13b78d34097b48ee720a0dd1, type: 3}
+      propertyPath: Z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914277723464321239, guid: 43b02d7e13b78d34097b48ee720a0dd1, type: 3}
+      propertyPath: Speed
+      value: 1000000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43b02d7e13b78d34097b48ee720a0dd1, type: 3}
 --- !u!1 &1639028252
@@ -3329,6 +3349,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945476884}
   m_CullTransparentMesh: 1
+--- !u!114 &1987762064 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 318359814322046612, guid: b2e7082f96d92d4488cff77ef4c99b28, type: 3}
+  m_PrefabInstance: {fileID: 6636826939694981595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2018325825
 GameObject:
   m_ObjectHideFlags: 0
