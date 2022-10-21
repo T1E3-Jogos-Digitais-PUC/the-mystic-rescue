@@ -89,8 +89,15 @@ namespace Codigo.Scripts.Entity.character
                         }
                     }
                     var playerGameObject = GameObject.FindWithTag("Player");
-                    var player = GetParentCharacterGameObject(playerGameObject);
+                    var character = GetParentCharacterGameObject(playerGameObject);
+                    var player = character.GetComponent<Player>();
                     player.Score += Score;
+                    if(gameObject.tag.Equals("Boss"))
+                    {
+                        var bossUI = GameObject.FindWithTag("BossUI");
+                        bossUI.SetActive(false);
+                        player.PlayVictoryCutscene();
+                    }
                 }
                 Destroy(gameObject);
             }

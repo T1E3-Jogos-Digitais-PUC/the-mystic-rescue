@@ -1,7 +1,9 @@
 ﻿using System;
 using Codigo.Scripts.Entity.character;
+using Codigo.Scripts.Entity.enemy.stage1;
 using Codigo.Scripts.Entity.player;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using Random = System.Random;
 
 namespace Codigo.Scripts.StageController
@@ -10,13 +12,12 @@ namespace Codigo.Scripts.StageController
     {
         private float CurrentTimeInSeconds = 0.0f;
         private int CurrentWave = 1;
-        public GameObject Player;
         public GameObject PFEnemy1;
         public GameObject PFEnemy2;
         public GameObject PFEnemy3;
-        public GameObject PFEnemy4;
         public AudioSource BGSong;
         public AudioSource BGBossSong;
+        private bool CanMoveBossLifeBar = true;
 
         private void Start()
         {
@@ -46,7 +47,7 @@ namespace Codigo.Scripts.StageController
             SpawnEighthWave(); //37seg
             SpawnNinethWave(); //43seg
             SpawnTenthWave(); //50seg
-            SpawnBoss(); //60seg
+            StartBoss(); //60seg
         }
 
         private void SpawnFirstWave()
@@ -55,9 +56,7 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy1(2f, -3.6f);
                 GenerateEnemy1(1f, 0f);
-                GenerateEnemy1(2f, 3.6f);
             }
         }
         
@@ -67,8 +66,7 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy1(1f, -3.2f);
-                GenerateEnemy2(2f, 0f);
+                GenerateEnemy1(1f, -4.9f);
                 GenerateEnemy1(1f, 3.2f);
             }
         }
@@ -79,13 +77,9 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy1(2f, -4.8f);
-                GenerateEnemy1(2f, 4.8f);
                 GenerateEnemy2(3f, -3f);
-                GenerateEnemy2(1f, 0f);
+                GenerateEnemy1(1f, 0f);
                 GenerateEnemy2(3f, 3f);
-                GenerateEnemy2(5f, -1.5f);
-                GenerateEnemy2(5f, 1.5f);
             }
         }
         
@@ -95,9 +89,8 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy1(1f, -1f);
-                GenerateEnemy1(1f, 1f);
-                GenerateEnemy3(3f, 5.2f);
+                GenerateEnemy1(1f, -2f);
+                GenerateEnemy1(1f, 2f);
                 GenerateEnemy3(6f, -5.2f);
             }
         }
@@ -108,12 +101,11 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy2(1f, -4.2f);
-                GenerateEnemy2(1f, 4.2f);
-                GenerateEnemy2(2f, 3.5f);
-                GenerateEnemy2(2f, -3.5f);
+                GenerateEnemy1(1f, -4.2f);
+                GenerateEnemy1(1f, 4.2f);
                 GenerateEnemy2(3f, -2f);
                 GenerateEnemy2(3f, 2f);
+                GenerateEnemy3(5f, 5.2f);
             }
         }
         
@@ -141,13 +133,8 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy2(1f, 0f);
-                GenerateEnemy3(2f, -1f);
-                GenerateEnemy3(2f, 1f);
                 GenerateEnemy2(3f, -3f); 
-                GenerateEnemy2(3f, 3f); 
-                GenerateEnemy1(4f, -1.5f); 
-                GenerateEnemy1(4f, 1.5f); 
+                GenerateEnemy2(3f, 3f);
                 GenerateEnemy1(5f, -4.5f); 
                 GenerateEnemy1(5f, 4.5f); 
                 GenerateEnemy3(6f, -5.7f); 
@@ -161,9 +148,7 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy3(2.5f, -4.4f);
-                GenerateEnemy3(1f, 1f);
-                GenerateEnemy3(1f, -1f);
+                GenerateEnemy3(5.5f, -4.4f);
                 GenerateEnemy3(2.5f, 4.4f);
             }
         }
@@ -174,13 +159,8 @@ namespace Codigo.Scripts.StageController
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy3(2f, -4.8f);
-                GenerateEnemy3(2f, 4.8f);
-                GenerateEnemy1(3f, -3f);
-                GenerateEnemy2(1f, 0f);
-                GenerateEnemy1(4f, 3f);
-                GenerateEnemy2(2f, -1.5f);
-                GenerateEnemy2(5f, 1.5f);
+                GenerateEnemy1(1f, 4.9f);
+                GenerateEnemy1(1f, -3.2f);
             }
         }
         
@@ -192,23 +172,27 @@ namespace Codigo.Scripts.StageController
                 CurrentWave++;
                 GenerateEnemy3(1f, 4f);
                 GenerateEnemy2(2f, 3f);
-                GenerateEnemy3(3f, 2f);
                 GenerateEnemy1(4f, 1f);
                 GenerateEnemy2(5f, 0f);
-                GenerateEnemy3(6f, -1f);
-                GenerateEnemy1(7f, -2f);
+                GenerateEnemy1(7f, -1f);
                 GenerateEnemy2(8f, -3f);
                 GenerateEnemy3(9f, -4f);
             }
         }
         
-        private void SpawnBoss()
+        private void StartBoss()
         {
             if (CurrentTimeInSeconds >= 10f && CurrentWave == 11)
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
-                GenerateEnemy4(14f, 0f);
+                var bossGameObject = GameObject.FindWithTag("Boss");
+                var boss = bossGameObject.GetComponent<EnemyBoss1>();
+                boss.PlayCutScene();
+                if (BGBossSong)
+                {
+                    BGBossSong.Play();
+                }
             }
             if (CurrentTimeInSeconds >= 2.5f && CurrentWave == 12)
             {
@@ -220,7 +204,7 @@ namespace Codigo.Scripts.StageController
                 }
             }
         }
-        
+
         private void GenerateEnemy1(float pushX, float pushY)
         {
             Instantiate(PFEnemy1, new Vector3(GameSettings.SCREEN_LIMIT_X[1] + pushX, pushY, 0.0f), transform.rotation);
@@ -234,14 +218,6 @@ namespace Codigo.Scripts.StageController
         private void GenerateEnemy3(float pushX, float pushY)
         {
             Instantiate(PFEnemy3, new Vector3(GameSettings.SCREEN_LIMIT_X[1] + pushX, pushY, 0.0f), transform.rotation);
-        }
-        private void GenerateEnemy4(float pushX, float pushY)
-        {
-            Instantiate(PFEnemy4, new Vector3(GameSettings.SCREEN_LIMIT_X[1] + pushX, pushY, 0.0f), transform.rotation);
-            if (BGBossSong)
-            {
-                BGBossSong.Play();
-            }
         }
     }
 }

@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Loop: 1
-  DelayToFirstShot: 2.5
+  DelayToFirstShot: 0.1
   Prefab: {fileID: 1118200649340446745, guid: 0e792df31f758e0439a2b1677fe3b241, type: 3}

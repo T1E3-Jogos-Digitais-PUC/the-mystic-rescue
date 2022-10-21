@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4014057125005641366}
   m_Layer: 0
   m_Name: PFEnemyBossStage1
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,6 +172,8 @@ MonoBehaviour:
   ItemDropChance: 0
   IsInvencible: 0
   Score: 1048
+  LifeBarRed: {fileID: 0}
+  LifeBarGreen: {fileID: 0}
 --- !u!1001 &4645368414026277885
 PrefabInstance:
   m_ObjectHideFlags: 0

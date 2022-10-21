@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7414778978451903464}
   - component: {fileID: 8742332463599450808}
   - component: {fileID: 6582990692789420247}
+  - component: {fileID: -3422707735061829072}
   m_Layer: 0
   m_Name: MDEnemyBulletBoss1
   m_TagString: Untagged
@@ -104,6 +105,22 @@ MonoBehaviour:
   ItemDrop: {fileID: 0}
   ItemDropChance: 0
   IsInvencible: 0
+  Score: 0
+--- !u!114 &-3422707735061829072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3390826531450301053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf4db89f0b74547bf9905c94e65dd4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutOfScreen: 1
+  OutOfScreenAxisX: 0
+  BySeconds: 0
 --- !u!1001 &1663993496342809313
 PrefabInstance:
   m_ObjectHideFlags: 0

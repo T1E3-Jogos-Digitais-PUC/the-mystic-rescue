@@ -14,29 +14,61 @@ namespace Codigo.Scripts.Entity.player
         public Image LifeBarGreen;
         public TMPro.TextMeshProUGUI ScoreText;
         private bool InInitialCutScene = true;
+        private bool InFinalCutScene = false;
+        
+        private void Start()
+        {
+            Direction = new Vector3(1, 0, 0);
+        }
+        
         void Update()
         {
-            if (InInitialCutScene)
+            if (!InFinalCutScene)
             {
-                InitialCutScene();
+                if (InInitialCutScene)
+                {
+                    InitialCutScene();
+                }
+                else
+                {
+                    PlayerMovement();
+                }
+
+                UpdateLifeBar();
+                UpdateScore();
+                GameOver();
             }
             else
             {
-                PlayerMovement();
+                FinalCutScene();
             }
-
-            UpdateLifeBar();
-            UpdateScore();
-            GameOver();
         }
+
         private void InitialCutScene()
         {
-            Direction = new Vector3(1, 0, 0);
             transform.position += Direction * (3.5f * Time.deltaTime);
             if (transform.position.x >= GameSettings.SCREEN_LIMIT_X[0] + (GameSettings.SCREEN_LIMIT_X[1] / 4))
             {
                 InInitialCutScene = false;
             }
+        }
+        
+        private void FinalCutScene()
+        {
+            if (transform.position.y > 0)
+            {
+                transform.position += new Vector3(0, -1, 0) * (6f * Time.deltaTime);
+            }
+            else if (transform.position.y < 0)
+            {
+                transform.position += new Vector3(0, 1, 0) * (6f * Time.deltaTime);
+            }
+            transform.position += Direction * (4f * Time.deltaTime);
+            if (transform.position.x >= GameSettings.SCREEN_LIMIT_X[1] + 2.0f)
+            {
+                Debug.Log("Fim de jogo");
+            }
+            
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
@@ -102,6 +134,13 @@ namespace Codigo.Scripts.Entity.player
             {
                 SceneManager.LoadScene("Fase01");
             }
+        }
+        
+        public void PlayVictoryCutscene()
+        {
+            IsInvencible = true;
+            InFinalCutScene = true;
+            Direction = new Vector3(1, 0, 0);
         }
     }
 }
