@@ -76,13 +76,14 @@ MonoBehaviour:
   FireRate: 10
   Type: 5
   Explosion: {fileID: 0}
+  DamageByBulletEffect: {fileID: 0}
   ItemDrop: {fileID: 0}
   ItemDropChance: 0
   IsInvencible: 1
   Score: 0
   IncSpeed: 0
   IncFireRate: 0
-  IncAttackDamage: 0.1
+  IncAttackDamage: 0.2
   IncMaxHp: 0
   HealPoints: 0
   Bullet: {fileID: 0}
@@ -451,5 +452,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   X: 0
   Y: 0
-  Z: 0.5
-  Speed: 1
+  Z: 1
+  Speed: 100

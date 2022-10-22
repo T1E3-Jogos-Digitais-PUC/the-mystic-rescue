@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HDRGreen
+  m_Name: HDRHighRed
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
   - _EMISSION
@@ -76,6 +76,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.08290792, g: 0.7830189, b: 0, a: 1}
-    - _EmissionColor: {r: 0, g: 2.018071, b: 0.40361416, a: 1}
+    - _Color: {r: 1, g: 0, b: 0.030630589, a: 0.8156863}
+    - _EmissionColor: {r: 2.1185474, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

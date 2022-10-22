@@ -56,9 +56,10 @@ MonoBehaviour:
   CurrentHp: 10
   HitDamage: 100
   AttackDamage: 1.1
-  FireRate: 0.04
+  FireRate: 0.1
   Type: 0
   Explosion: {fileID: 0}
+  DamageByBulletEffect: {fileID: 7776169849822907613, guid: 8136f816f762ab64082b4fd867fcc3e2, type: 3}
   ItemDrop: {fileID: 0}
   ItemDropChance: 0
   IsInvencible: 0
@@ -204,6 +205,7 @@ MonoBehaviour:
   FireRate: 10
   Type: 6
   Explosion: {fileID: 0}
+  DamageByBulletEffect: {fileID: 0}
   ItemDrop: {fileID: 0}
   ItemDropChance: 0
   IsInvencible: 1
@@ -343,6 +345,7 @@ MonoBehaviour:
   FireRate: 10
   Type: 6
   Explosion: {fileID: 0}
+  DamageByBulletEffect: {fileID: 0}
   ItemDrop: {fileID: 0}
   ItemDropChance: 0
   IsInvencible: 1

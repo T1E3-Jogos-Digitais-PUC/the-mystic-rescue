@@ -8,6 +8,7 @@ namespace Codigo.Scripts.Entity.player
     {
         // public KeyCode Key;
         public GameObject Prefab;
+        public GameObject Particles;
         public AudioSource FireSound;
         private Character ParentCharacter;
         private float NextFire;
@@ -24,6 +25,10 @@ namespace Codigo.Scripts.Entity.player
             {
                 if (Input.GetButton("Fire1") && NextFire <= 0.0f)
                 {
+                    if (Particles)
+                    {
+                        Instantiate(Particles, transform.position, transform.rotation);
+                    }
                     GameObject instantiatedBullet = Instantiate(Prefab, transform.position, transform.rotation);
                     // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
                     Character bullet = instantiatedBullet.GetComponent<Character>();

@@ -188,8 +188,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   X: 0
   Y: 0
-  Z: 1.5
-  Speed: 1
+  Z: 5
+  Speed: 100
 --- !u!114 &7810032982399957376
 MonoBehaviour:
   m_ObjectHideFlags: 0

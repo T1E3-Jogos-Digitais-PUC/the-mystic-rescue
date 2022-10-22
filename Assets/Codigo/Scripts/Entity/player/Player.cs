@@ -172,7 +172,7 @@ namespace Codigo.Scripts.Entity.player
         {
             if (CurrentHp <= 0)
             {
-                SceneManager.LoadScene("Fase01");
+                SceneManager.LoadScene("Menu");
             }
         }
         

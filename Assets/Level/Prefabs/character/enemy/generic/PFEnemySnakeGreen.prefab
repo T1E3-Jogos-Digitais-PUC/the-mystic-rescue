@@ -140,8 +140,9 @@ MonoBehaviour:
   FireRate: 1
   Type: 1
   Explosion: {fileID: 0}
+  DamageByBulletEffect: {fileID: 0}
   ItemDrop: {fileID: 2897127163493187192, guid: 0e8e7cbf11867324d87c840e0534962a, type: 3}
-  ItemDropChance: 5
+  ItemDropChance: 10
   IsInvencible: 0
   Score: 125
 --- !u!65 &5618886902161444131
