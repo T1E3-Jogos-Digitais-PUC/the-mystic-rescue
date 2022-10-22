@@ -808,9 +808,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Material: {fileID: 2100000, guid: 4731643d7f03a1746bbabf0efbbf50df, type: 2}
+  Color: {r: 1, g: 1, b: 0, a: 1}
   EmissionRangeMin: 1.2
   EmissionRangeMax: 2.2
-  EmissionSpeed: 2
+  EmissionSpeed: 1
 --- !u!1 &469036716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,9 +1069,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Material: {fileID: 2100000, guid: 4731643d7f03a1746bbabf0efbbf50df, type: 2}
+  Color: {r: 0.6367924, g: 1, b: 0.64879936, a: 1}
   EmissionRangeMin: 1.2
   EmissionRangeMax: 2.2
-  EmissionSpeed: 2
+  EmissionSpeed: 1
 --- !u!1 &652205919
 GameObject:
   m_ObjectHideFlags: 0
@@ -3673,9 +3675,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Material: {fileID: 2100000, guid: 4731643d7f03a1746bbabf0efbbf50df, type: 2}
+  Color: {r: 0, g: 0.8396716, b: 1, a: 1}
   EmissionRangeMin: 1.2
   EmissionRangeMax: 2.2
-  EmissionSpeed: 2
+  EmissionSpeed: 1
 --- !u!114 &1987762064 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 318359814322046612, guid: b2e7082f96d92d4488cff77ef4c99b28, type: 3}
