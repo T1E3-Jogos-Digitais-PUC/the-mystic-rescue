@@ -1177,7 +1177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PFEnemy1: {fileID: 7179261229017394339, guid: e608aa0d59269f54cb1bb682311342f9, type: 3}
-  PFEnemy2: {fileID: 7179261229017394339, guid: d826ee892a5accb49bf9c43681956b64, type: 3}
+  PFEnemy2: {fileID: 1293238739664390536, guid: 4ccc2cea9af01eb47a27338b7521b927, type: 3}
   PFEnemy3: {fileID: 4970652642000497693, guid: 4f35492d7230f6d4e8a9124ddf4fa02c, type: 3}
   BGSong: {fileID: 1224064989}
   BGBossSong: {fileID: 444299502}
