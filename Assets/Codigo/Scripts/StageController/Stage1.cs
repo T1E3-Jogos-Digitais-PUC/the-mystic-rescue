@@ -17,7 +17,6 @@ namespace Codigo.Scripts.StageController
         public GameObject PFEnemy3;
         public AudioSource BGSong;
         public AudioSource BGBossSong;
-        private bool CanMoveBossLifeBar = true;
 
         private void Start()
         {

@@ -16,6 +16,7 @@ namespace Codigo.Scripts.Entity.character
         public float FireRate;
         public CharacterType Type;
         public GameObject Explosion;
+        public GameObject DamageByBulletEffect;
         public GameObject ItemDrop;
         public int ItemDropChance;
         public bool IsInvencible = false;
@@ -69,6 +70,10 @@ namespace Codigo.Scripts.Entity.character
             // se bala do inimigo, toca o player
             if (Type.Equals(CharacterType.ENEMY_BULLET) && character.Type.Equals(CharacterType.PLAYER))
             {
+                if (character.DamageByBulletEffect)
+                {
+                    Instantiate(character.DamageByBulletEffect, transform.position, transform.rotation);
+                }
                 character.ReceiveDamage(AttackDamage);
                 Destroy(gameObject);
             }

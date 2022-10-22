@@ -7,20 +7,14 @@ public class EfeitoParallax : MonoBehaviour
 {
     [SerializeField] private Image fundo;
     [SerializeField] private float velocidade;
-
-    // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
-
+    
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         MoveFundo();
     }
 
-    public void MoveFundo()
+    private void MoveFundo()
     {
         //Multiplicando por Input.GetAxis("Horizontal") o script identifica para qual lado o personagem esta deslocando (esquerda = -1, parado = 0, direita = 1)
        //transform.position = new Vector3(transform.position.x - velocidade * Time.deltaTime * Input.GetAxis("Horizontal"), 0, 0);
