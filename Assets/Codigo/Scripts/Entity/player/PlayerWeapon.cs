@@ -10,18 +10,19 @@ namespace Codigo.Scripts.Entity.player
         public GameObject Prefab;
         public GameObject Particles;
         public AudioSource FireSound;
-        private Character ParentCharacter;
+        private Player ParentCharacter;
         private float NextFire;
 
         private void Start()
         {
-            ParentCharacter = Character.GetParentCharacterGameObject(gameObject);
+            var character = Character.GetParentCharacterGameObject(gameObject);
+            ParentCharacter = character.GetComponent<Player>();
             NextFire = 0.0f;
         }
 
         void Update()
         {
-            if (ParentCharacter)
+            if (ParentCharacter && ParentCharacter.CanInput)
             {
                 if (Input.GetButton("Fire1") && NextFire <= 0.0f)
                 {

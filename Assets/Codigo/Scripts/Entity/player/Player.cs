@@ -14,11 +14,13 @@ namespace Codigo.Scripts.Entity.player
         public Image LifeBarRed;
         public Image LifeBarGreen;
         public Image ShieldBarBlue;
+        public GameObject GameOverImage;
         public TMPro.TextMeshProUGUI ScoreText;
         private bool InInitialCutScene = true;
         private bool InFinalCutScene = false;
         public GameObject ShieldGameObject;
         private float NextFire = 0.0f;
+        public bool CanInput = true;
         
         private void Start()
         {
@@ -26,6 +28,10 @@ namespace Codigo.Scripts.Entity.player
             if (ShieldGameObject != null)
             {
                 ShieldGameObject.SetActive(false);
+            }
+            if (GameOverImage != null)
+            {
+                GameOverImage.SetActive(false);
             }
         }
         
@@ -38,7 +44,7 @@ namespace Codigo.Scripts.Entity.player
                 {
                     InitialCutScene();
                 }
-                else
+                else if (CanInput)
                 {
                     PlayerMovement();
                 }
@@ -70,7 +76,7 @@ namespace Codigo.Scripts.Entity.player
         private void InitialCutScene()
         {
             transform.position += Direction * (3.5f * Time.deltaTime);
-            if (transform.position.x >= GameSettings.SCREEN_LIMIT_X[0] + (GameSettings.SCREEN_LIMIT_X[1] / 4))
+            if (transform.position.x >= GameSettings.SCREEN_LIMIT_X[0] + (GameSettings.SCREEN_LIMIT_X[1] / 5))
             {
                 InInitialCutScene = false;
             }
@@ -87,11 +93,6 @@ namespace Codigo.Scripts.Entity.player
                 transform.position += new Vector3(0, 1, 0) * (6f * Time.deltaTime);
             }
             transform.position += Direction * (4f * Time.deltaTime);
-            if (transform.position.x >= GameSettings.SCREEN_LIMIT_X[1] + 2.0f)
-            {
-                Debug.Log("Fim de jogo");
-            }
-            
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
@@ -168,12 +169,24 @@ namespace Codigo.Scripts.Entity.player
             }
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         private void GameOver()
         {
             if (CurrentHp <= 0)
             {
-                SceneManager.LoadScene("Menu");
+                CanInput = false;
+                if(GameOverImage) {
+                    GameOverImage.SetActive(true);
+                }
+                Time.timeScale = 0.2f;
+                StartCoroutine(LoadMenuSceneAfterSeconds(0.5f));
             }
+        }
+        
+        IEnumerator LoadMenuSceneAfterSeconds(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+            SceneManager.LoadScene("Menu");
         }
         
         public void PlayVictoryCutscene()
@@ -182,5 +195,7 @@ namespace Codigo.Scripts.Entity.player
             InFinalCutScene = true;
             Direction = new Vector3(1, 0, 0);
         }
+        
+        
     }
 }

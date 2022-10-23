@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3822953484807662176}
   - component: {fileID: 2704512420216171042}
   - component: {fileID: 4498037869293332748}
+  - component: {fileID: 3175689177845608999}
   m_Layer: 0
   m_Name: PFEnemy01
   m_TagString: Enemy
@@ -108,6 +109,26 @@ MonoBehaviour:
   ItemDropChance: 5
   IsInvencible: 0
   Score: 125
+--- !u!95 &3175689177845608999
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293238739664390536}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f0ee180e11839c41a8159805d3a614b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2089804215026310799
 GameObject:
   m_ObjectHideFlags: 0

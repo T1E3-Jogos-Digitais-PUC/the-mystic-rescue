@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3822953484807662176}
   - component: {fileID: 2704512420216171042}
   - component: {fileID: 8834540243640302083}
-  - component: {fileID: 5435963448749111418}
+  - component: {fileID: 5196831899419354887}
   m_Layer: 0
   m_Name: PFEnemy03
   m_TagString: Enemy
@@ -109,22 +109,26 @@ MonoBehaviour:
   ItemDropChance: 10
   IsInvencible: 0
   Score: 232
---- !u!114 &5435963448749111418
-MonoBehaviour:
+--- !u!95 &5196831899419354887
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293238739664390536}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e341d691a66d4a7a95646a7d3cba7751, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  X: 0
-  Y: 0
-  Z: 5
-  Speed: 100
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2089804215026310799
 GameObject:
   m_ObjectHideFlags: 0

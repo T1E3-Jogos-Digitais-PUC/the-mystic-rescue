@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3822953484807662176}
   - component: {fileID: 2162231796438111382}
   - component: {fileID: 2704512420216171042}
+  - component: {fileID: 35203256105323651}
   m_Layer: 0
   m_Name: PFEnemy02
   m_TagString: Enemy
@@ -88,6 +89,7 @@ MonoBehaviour:
   FireRate: 3.5
   Type: 1
   Explosion: {fileID: 0}
+  DamageByBulletEffect: {fileID: 0}
   ItemDrop: {fileID: 2897127163493187192, guid: 35721804071ffe74795b2597be27232c, type: 3}
   ItemDropChance: 10
   IsInvencible: 0
@@ -107,6 +109,26 @@ MonoBehaviour:
   OutOfScreen: 0
   OutOfScreenAxisX: 1
   BySeconds: 0
+--- !u!95 &35203256105323651
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293238739664390536}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f0ee180e11839c41a8159805d3a614b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2089804215026310799
 GameObject:
   m_ObjectHideFlags: 0
