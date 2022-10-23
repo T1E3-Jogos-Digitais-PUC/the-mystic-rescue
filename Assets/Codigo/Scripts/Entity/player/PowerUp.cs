@@ -11,20 +11,32 @@ namespace Codigo.Scripts.Entity.player
         public float IncMaxHp = 0;
         public float HealPoints = 0;
         public GameObject Bullet;
+        public AudioSource TouchItemSound;
         
         void OnCollisionEnter(Collision collision)
         {
             Character character = GetParentCharacterGameObject(collision.gameObject);
             if (character.Type.Equals(CharacterType.PLAYER))
             {
+                PlaySound();
                 character.IncreaseSpeed(IncSpeed);
                 character.IncreaseFireRate(IncFireRate);
                 character.IncreaseAttackDamage(IncAttackDamage);    
                 character.IncreaseMaxHp(IncMaxHp);
                 character.Heal(HealPoints);
-                Destroy(gameObject);
+                var o = gameObject;
+                o.transform.position = new Vector3(0, 1000, 0);
+                Destroy(o, 5);
             }
         }
-        
+
+        private void PlaySound()
+        {
+            if (TouchItemSound != null)
+            {
+                TouchItemSound.Play();
+            }
+
+        }
     }
 }

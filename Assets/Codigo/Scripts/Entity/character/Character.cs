@@ -100,7 +100,7 @@ namespace Codigo.Scripts.Entity.character
                         if (per <= ItemDropChance)
                         {
                             var y = GameSettings.SCREEN_LIMIT_Y[1];
-                            Instantiate(ItemDrop, new Vector3(transform.position.x + 2.0f, y, transform.position.z), transform.rotation);
+                            Instantiate(ItemDrop, new Vector3(transform.position.x - 1.0f, y, transform.position.z), transform.rotation);
                         }
                     }
                     var playerGameObject = GameObject.FindWithTag("Player");

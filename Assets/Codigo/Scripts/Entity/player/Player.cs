@@ -84,11 +84,11 @@ namespace Codigo.Scripts.Entity.player
         
         private void FinalCutScene()
         {
-            if (transform.position.y > 0)
+            if (transform.position.y > 5)
             {
                 transform.position += new Vector3(0, -1, 0) * (6f * Time.deltaTime);
             }
-            else if (transform.position.y < 0)
+            else if (transform.position.y < -5)
             {
                 transform.position += new Vector3(0, 1, 0) * (6f * Time.deltaTime);
             }
@@ -177,9 +177,10 @@ namespace Codigo.Scripts.Entity.player
                 CanInput = false;
                 if(GameOverImage) {
                     GameOverImage.SetActive(true);
+                    GameOverImage.transform.position = new Vector3(GameOverImage.transform.position.x, 0, GameOverImage.transform.position.z);
                 }
                 Time.timeScale = 0.2f;
-                StartCoroutine(LoadMenuSceneAfterSeconds(0.5f));
+                StartCoroutine(LoadMenuSceneAfterSeconds(0.6f));
             }
         }
         

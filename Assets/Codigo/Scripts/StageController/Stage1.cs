@@ -15,24 +15,21 @@ namespace Codigo.Scripts.StageController
         public GameObject PFEnemy1;
         public GameObject PFEnemy2;
         public GameObject PFEnemy3;
+        public GameObject TutorialOverlay;
         public AudioSource BGSong;
         public AudioSource BGBossSong;
 
+        private int TutorialState = 1;
+        private float TutorialDelay = 5f;
+
         private void Start()
         {
-            CreatePlayer();
             if (BGSong)
             {
                 BGSong.Play();
             }
         }
-
-        private void CreatePlayer()
-        {
-            // Vector3 playerPos = new Vector3(GameSettings.SCREEN_LIMIT_X[0] - 1.0f, 0.0f, 0.0f);
-            // Instantiate(Player, playerPos, transform.rotation);
-        }
-
+        
         private void Update()
         {
             CurrentTimeInSeconds += Time.deltaTime;
@@ -47,6 +44,30 @@ namespace Codigo.Scripts.StageController
             SpawnNinethWave(); //43seg
             SpawnTenthWave(); //50seg
             StartBoss(); //60seg
+            MoveTutorialOverlayToCenter();
+        }
+
+        private void MoveTutorialOverlayToCenter()
+        {
+            if (TutorialOverlay)
+            {
+                if (TutorialOverlay.transform.position.x < 0 && TutorialState == 1)
+                {
+                    TutorialOverlay.transform.position = new Vector3(0, TutorialOverlay.transform.position.y, 0);
+                    TutorialState = 2;
+                }
+                else if (TutorialState == 1)
+                {
+                    TutorialOverlay.transform.position = new Vector3(TutorialOverlay.transform.position.x + (-35f * Time.deltaTime), TutorialOverlay.transform.position.y, 0);
+                } else if (TutorialState == 2 && TutorialDelay > 0)
+                {
+                    TutorialDelay -= Time.deltaTime;
+                }
+                else
+                {
+                    TutorialOverlay.SetActive(false);
+                }
+            }
         }
 
         private void SpawnFirstWave()
