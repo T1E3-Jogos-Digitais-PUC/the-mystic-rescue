@@ -24,6 +24,7 @@ namespace Codigo.Scripts.StageController
 
         private void Start()
         {
+            Time.timeScale = 1f;
             if (BGSong)
             {
                 BGSong.Play();
