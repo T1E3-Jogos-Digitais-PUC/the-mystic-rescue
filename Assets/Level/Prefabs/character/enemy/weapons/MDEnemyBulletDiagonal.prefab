@@ -85,9 +85,11 @@ MonoBehaviour:
   FireRate: 0
   Type: 3
   Explosion: {fileID: 0}
+  DamageByBulletEffect: {fileID: 0}
   ItemDrop: {fileID: 0}
   ItemDropChance: 0
   IsInvencible: 0
+  Score: 0
 --- !u!114 &586459415390649059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OutOfScreen: 0
   OutOfScreenAxisX: 1
-  BySeconds: 6
+  BySeconds: 0
 --- !u!1001 &5823116485819854938
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 6531505974510435515, guid: 045d2e753f526334da0d9f2c802223bc, type: 3}
-  Particles: {fileID: 3259858664802314917, guid: 3692f84c42b88d544928331d318f44ca, type: 3}
+  Particles: {fileID: 0}
   FireSound: {fileID: 7383718497197436850}
 --- !u!82 &7383718497197436850
 AudioSource:
