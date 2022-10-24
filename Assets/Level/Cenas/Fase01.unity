@@ -3841,6 +3841,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2483439666692632645, guid: 43b02d7e13b78d34097b48ee720a0dd1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e46263079756cd459b7013572e9403a, type: 2}
     - target: {fileID: 3775707548111407652, guid: 43b02d7e13b78d34097b48ee720a0dd1, type: 3}
       propertyPath: ScoreText
       value: 
@@ -3861,6 +3865,10 @@ PrefabInstance:
       propertyPath: ShieldBarBlue
       value: 
       objectReference: {fileID: 1987762064}
+    - target: {fileID: 5886142992429449676, guid: 43b02d7e13b78d34097b48ee720a0dd1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b85278c6e3443244969771bd127d392, type: 2}
     - target: {fileID: 8914277723464321239, guid: 43b02d7e13b78d34097b48ee720a0dd1, type: 3}
       propertyPath: X
       value: 0
