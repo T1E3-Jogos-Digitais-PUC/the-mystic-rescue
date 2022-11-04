@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OutOfScreen: 0
   OutOfScreenAxisX: 1
-  BySeconds: 6
+  BySeconds: 0
 --- !u!1001 &2279324241561287501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163,9 +163,11 @@ MonoBehaviour:
   FireRate: 0
   Type: 3
   Explosion: {fileID: 0}
+  DamageByBulletEffect: {fileID: 0}
   ItemDrop: {fileID: 0}
   ItemDropChance: 0
   IsInvencible: 0
+  Score: 0
 --- !u!4 &1741609029090614438 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: baf937933bfca394485b81f2016256a1, type: 3}

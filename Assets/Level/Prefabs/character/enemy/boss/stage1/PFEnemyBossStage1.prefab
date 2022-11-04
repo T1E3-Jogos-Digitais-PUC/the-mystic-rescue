@@ -314,8 +314,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
-  MaxHp: 600
-  CurrentHp: 600
+  MaxHp: 500
+  CurrentHp: 500
   HitDamage: 3
   AttackDamage: 1.5
   FireRate: 0.55

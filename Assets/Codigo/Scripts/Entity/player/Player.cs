@@ -84,15 +84,32 @@ namespace Codigo.Scripts.Entity.player
         
         private void FinalCutScene()
         {
-            if (transform.position.y > 5)
+            if (transform.position.x < GameSettings.SCREEN_LIMIT_X[1] + 2.0f)
             {
-                transform.position += new Vector3(0, -1, 0) * (6f * Time.deltaTime);
+                if (transform.position.y > 5)
+                {
+                    transform.position += new Vector3(0, -1, 0) * (6f * Time.deltaTime);
+                }
+                else if (transform.position.y < -5)
+                {
+                    transform.position += new Vector3(0, 1, 0) * (6f * Time.deltaTime);
+                }
+
+                transform.position += Direction * (4f * Time.deltaTime);
             }
-            else if (transform.position.y < -5)
+            else
             {
-                transform.position += new Vector3(0, 1, 0) * (6f * Time.deltaTime);
+                var activeScene = SceneManager.GetActiveScene();
+                switch (activeScene.name)
+                {
+                    case "Fase01":
+                        SceneManager.LoadScene("Fase02");
+                        break;
+                    default:
+                        SceneManager.LoadScene("Menu");
+                        break;
+                }
             }
-            transform.position += Direction * (4f * Time.deltaTime);
         }
 
         // ReSharper disable Unity.PerformanceAnalysis

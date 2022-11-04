@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OutOfScreen: 0
   OutOfScreenAxisX: 1
-  BySeconds: 6
+  BySeconds: 0
 --- !u!1001 &5603997132674393878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,9 +133,11 @@ MonoBehaviour:
   FireRate: 0
   Type: 3
   Explosion: {fileID: 0}
+  DamageByBulletEffect: {fileID: 0}
   ItemDrop: {fileID: 0}
   ItemDropChance: 0
   IsInvencible: 0
+  Score: 0
 --- !u!114 &7610563432902113575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,9 +259,11 @@ MonoBehaviour:
   FireRate: 0
   Type: 3
   Explosion: {fileID: 0}
+  DamageByBulletEffect: {fileID: 0}
   ItemDrop: {fileID: 0}
   ItemDropChance: 0
   IsInvencible: 0
+  Score: 0
 --- !u!114 &7643550089408205313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,9 +387,11 @@ MonoBehaviour:
   FireRate: 0
   Type: 3
   Explosion: {fileID: 0}
+  DamageByBulletEffect: {fileID: 0}
   ItemDrop: {fileID: 0}
   ItemDropChance: 0
   IsInvencible: 0
+  Score: 0
 --- !u!4 &6354735654271987324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3431514285580758744, guid: b0f3245c0f793ac41a670e5d8547520d, type: 3}

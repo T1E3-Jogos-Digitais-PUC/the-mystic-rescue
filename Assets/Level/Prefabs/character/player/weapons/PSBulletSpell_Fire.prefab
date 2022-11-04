@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6796707257105095760}
   - component: {fileID: 7072310203971304521}
   - component: {fileID: 5776092948846059924}
+  - component: {fileID: 951966715797898118}
   m_Layer: 0
   m_Name: PSBulletSpell_Fire
   m_TagString: Untagged
@@ -58,6 +59,11 @@ MonoBehaviour:
   FireRate: 0
   Type: 2
   Explosion: {fileID: 7446620007608068009, guid: cc0f9dc6375d42349ad389f15f139f57, type: 3}
+  DamageByBulletEffect: {fileID: 0}
+  ItemDrop: {fileID: 0}
+  ItemDropChance: 0
+  IsInvencible: 0
+  Score: 0
   LifeTime: 2
 --- !u!135 &7072310203971304521
 SphereCollider:
@@ -88,6 +94,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &951966715797898118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6531505974510435515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf4db89f0b74547bf9905c94e65dd4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutOfScreen: 1
+  OutOfScreenAxisX: 0
+  BySeconds: 0
 --- !u!1 &6531505974589596922
 GameObject:
   m_ObjectHideFlags: 0

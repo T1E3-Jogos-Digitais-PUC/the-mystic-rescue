@@ -1,10 +1,5 @@
-﻿using System;
-using Codigo.Scripts.Entity.character;
-using Codigo.Scripts.Entity.enemy.stage1;
-using Codigo.Scripts.Entity.player;
+﻿using Codigo.Scripts.Entity.enemy.stage1;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using Random = System.Random;
 
 namespace Codigo.Scripts.StageController
 {
@@ -24,6 +19,7 @@ namespace Codigo.Scripts.StageController
 
         private void Start()
         {
+            Time.timeScale = 1f;
             if (BGSong)
             {
                 BGSong.Play();
