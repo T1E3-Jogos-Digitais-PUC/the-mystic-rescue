@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 156034205}
   - component: {fileID: 156034204}
+  - component: {fileID: 156034206}
   m_Layer: 0
   m_Name: BGMenu
   m_TagString: Untagged
@@ -251,6 +252,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &156034206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156034203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ca89893cc54064e91d7020a083e192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Volume
+  defaultValue: 1
+  onValueLoaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 156034204}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_volume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1694240160}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &157963450
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: -383}
+  m_AnchoredPosition: {x: 2.0000153, y: -365}
   m_SizeDelta: {x: 355.9998, y: 59.7997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &157963452
@@ -885,7 +927,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: -226}
+  m_AnchoredPosition: {x: 1.9999542, y: -272}
   m_SizeDelta: {x: 355.9998, y: 59.7997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &545598847
@@ -1149,7 +1191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: -150}
+  m_AnchoredPosition: {x: 2, y: -178}
   m_SizeDelta: {x: 355.9998, y: 59.7997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &890718326
@@ -1264,7 +1306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &904111357
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2539,6 +2581,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1694240159}
   - component: {fileID: 1694240160}
+  - component: {fileID: 1694240161}
   m_Layer: 5
   m_Name: Slider_VolumeMusica
   m_TagString: Untagged
@@ -2619,7 +2662,44 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1694240161}
+        m_TargetAssemblyTypeName: PlayerPrefsFloatSaver, Assembly-CSharp
+        m_MethodName: SetFloat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 156034204}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_volume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1694240161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694240158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc53c3dfa8282b4c96fd9c7020d25a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Volume
 --- !u!1 &1694486977
 GameObject:
   m_ObjectHideFlags: 0
