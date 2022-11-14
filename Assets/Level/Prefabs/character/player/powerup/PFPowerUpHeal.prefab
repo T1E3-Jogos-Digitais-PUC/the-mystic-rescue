@@ -15,7 +15,9 @@ GameObject:
   - component: {fileID: 1647705348787455883}
   - component: {fileID: 4823235438191979501}
   - component: {fileID: 9162138360379403450}
+  - component: {fileID: 5167313975340594662}
   - component: {fileID: 8526340448360119322}
+  - component: {fileID: -5555993254187280101}
   m_Layer: 0
   m_Name: PFPowerUpHeal
   m_TagString: Untagged
@@ -229,6 +231,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5167313975340594662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897127163493187192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9f633c9b3c97f44a97d5976f75a144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsFX: 1
+  audio: {fileID: 9162138360379403450}
 --- !u!82 &8526340448360119322
 AudioSource:
   m_ObjectHideFlags: 0
@@ -325,6 +341,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5555993254187280101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897127163493187192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9f633c9b3c97f44a97d5976f75a144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsFX: 1
+  audio: {fileID: 8526340448360119322}
 --- !u!1001 &4280083755135969215
 PrefabInstance:
   m_ObjectHideFlags: 0

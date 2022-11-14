@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
-    public void CarregaCena(string nomeCena)
-    {
-        SceneManager.LoadScene(nomeCena);
-    }
+	public void CarregaCena(string nomeCena)
+	{
+		SceneManager.LoadScene(nomeCena);
+	}
 
-    public void Sair()
-    {
-        Application.Quit();
-    }
+	public void Sair()
+	{
+		Application.Quit();
+	}
 }

@@ -62,8 +62,8 @@ namespace Codigo.Scripts.Entity.character
                     Destroy(instantiatedExplosion, 0.5f);
                 }
             }
-            // se bala do jogador, toca um obstáculo
-            if (Type.Equals(CharacterType.PLAYER_BULLET) && character.Type.Equals(CharacterType.OBSTACLE))
+            // se bala do jogador ou do inimigo, toca um obstáculo
+            if ((Type.Equals(CharacterType.PLAYER_BULLET) || Type.Equals(CharacterType.ENEMY_BULLET)) && character.Type.Equals(CharacterType.OBSTACLE))
             {
                 Destroy(gameObject);
             }
