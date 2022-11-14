@@ -93,6 +93,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2049970595420329766}
   - component: {fileID: 3775707548111407652}
+  - component: {fileID: 1036090658689640441}
+  - component: {fileID: 2857733537755374295}
   m_Layer: 0
   m_Name: PFPlayer
   m_TagString: Player
@@ -154,6 +156,35 @@ MonoBehaviour:
   ScoreText: {fileID: 0}
   ShieldGameObject: {fileID: 8767994011791007570}
   CanInput: 1
+--- !u!54 &1036090658689640441
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022253552225114539}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 120
+  m_CollisionDetection: 2
+--- !u!135 &2857733537755374295
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022253552225114539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1487115302349400857
 GameObject:
   m_ObjectHideFlags: 0
@@ -5612,8 +5643,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1799943754110399171}
   - component: {fileID: 1255546718745981297}
-  - component: {fileID: 1972513838052545483}
-  - component: {fileID: 36961626625432790}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5659,35 +5688,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!54 &1972513838052545483
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3624754663167064421}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
---- !u!135 &36961626625432790
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3624754663167064421}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.4
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3937242443573530315
 GameObject:
   m_ObjectHideFlags: 0
@@ -6718,6 +6718,7 @@ GameObject:
   - component: {fileID: 8914277723464321239}
   - component: {fileID: 830663690566135605}
   - component: {fileID: 547289642425381052}
+  - component: {fileID: 7719193336767309712}
   m_Layer: 0
   m_Name: PFShield
   m_TagString: Untagged
@@ -6870,6 +6871,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7719193336767309712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8767994011791007570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9f633c9b3c97f44a97d5976f75a144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsFX: 1
+  audio: {fileID: 547289642425381052}
 --- !u!1 &8849651509904522811
 GameObject:
   m_ObjectHideFlags: 0
@@ -7183,5 +7198,29 @@ PrefabInstance:
 --- !u!4 &2340906517483188268 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1696675540587411167, guid: 9daa740efe7b9d6478d874182f0962b7, type: 3}
+  m_PrefabInstance: {fileID: 4032796965119264499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3328158278887932834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1862415653522179409, guid: 9daa740efe7b9d6478d874182f0962b7, type: 3}
+  m_PrefabInstance: {fileID: 4032796965119264499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1988893002524290473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3328158278887932834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9f633c9b3c97f44a97d5976f75a144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsFX: 1
+  audio: {fileID: 5877025592080738625}
+--- !u!82 &5877025592080738625 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7383718497197436850, guid: 9daa740efe7b9d6478d874182f0962b7, type: 3}
   m_PrefabInstance: {fileID: 4032796965119264499}
   m_PrefabAsset: {fileID: 0}

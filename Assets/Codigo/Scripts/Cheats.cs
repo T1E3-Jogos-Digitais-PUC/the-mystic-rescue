@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Codigo.Scripts;
 using Codigo.Scripts.Entity.player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,21 @@ public class Cheats : MonoBehaviour
 
 	private void Update()
 	{
+		if (Input.GetKey(KeyCode.Escape))
+		{
+			if (GameSettings.IsPaused)
+			{
+				Time.timeScale = 1;
+				GameSettings.IsPaused = false;
+			}
+			else
+			{
+				Time.timeScale = 0;
+				GameSettings.IsPaused = true;
+			}
+			
+		}
+
 		if (Input.GetKey(KeyCode.LeftAlt))
 		{
 			//Alt + I: Player Invencible

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1696675540587411167}
   - component: {fileID: 8305583244148777792}
   - component: {fileID: 7383718497197436850}
+  - component: {fileID: 7852369453141979742}
   m_Layer: 0
   m_Name: PFWeaponMain
   m_TagString: Untagged
@@ -144,3 +145,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7852369453141979742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862415653522179409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9f633c9b3c97f44a97d5976f75a144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsFX: 1
+  audio: {fileID: 7383718497197436850}
