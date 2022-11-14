@@ -229,6 +229,8 @@ namespace Codigo.Scripts.Entity.player
 			}
 		}
 
+        
+
 		IEnumerator LoadMenuSceneAfterSeconds(float seconds)
 		{
 			yield return new WaitForSeconds(seconds);
