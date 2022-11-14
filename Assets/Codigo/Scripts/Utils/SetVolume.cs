@@ -10,6 +10,19 @@ using UnityEngine.UI;
 
 public class SetVolume : MonoBehaviour
 {
+	public bool IsFX = false;
+	void Start()
+	{
+		if (IsFX)
+		{
+			slider.value = GameSettings.MusicVolume;
+		}
+		else
+		{
+			slider.value = GameSettings.FXVolume;
+		}
+	}
+
 	public Slider slider;
 	public void SetMusicVolume()
 	{

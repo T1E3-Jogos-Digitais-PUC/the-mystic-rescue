@@ -7,8 +7,24 @@ public class GetVolume : MonoBehaviour
 {
     public bool IsFX = false;
     public AudioSource audio;
-    // Update is called once per frame
+    
+    
+    void Start()
+    {
+        SetVolumes();
+    }
+
     void Update()
+    {
+        SetVolumes();
+    }
+
+    void Awake()
+    {
+        SetVolumes();
+    }
+
+    private void SetVolumes()
     {
         if (IsFX)
         {

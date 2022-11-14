@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9f633c9b3c97f44a97d5976f75a144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsFX: 0
   audio: {fileID: 156034204}
 --- !u!1 &157963450
 GameObject:
@@ -1112,6 +1113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5718cb751f2ee469a3340ff8f0ad33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsFX: 1
   slider: {fileID: 589529582}
 --- !u!1 &835283905
 GameObject:
@@ -2685,6 +2687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5718cb751f2ee469a3340ff8f0ad33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsFX: 0
   slider: {fileID: 1694240160}
 --- !u!1 &1694486977
 GameObject:

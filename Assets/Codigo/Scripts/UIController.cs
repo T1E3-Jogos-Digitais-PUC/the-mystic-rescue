@@ -10,6 +10,12 @@ public class UIController : MonoBehaviour
 		SceneManager.LoadScene(nomeCena);
 	}
 
+
+	public void Resume()
+	{
+		Time.timeScale = 1;
+	}
+
 	public void Sair()
 	{
 		Application.Quit();
