@@ -682,8 +682,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a9408e974c45f788cf87a6ced7f68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PFEnemy1: {fileID: 1293238739664390536, guid: c1ac6fee7fd8ac84db248494df23a3da, type: 3}
-  PFEnemy2: {fileID: 1293238739664390536, guid: 4ccc2cea9af01eb47a27338b7521b927, type: 3}
+  PFEnemy1: {fileID: 1293238739664390536, guid: 559348af803e19b4b899074bdb219c22, type: 3}
+  PFEnemy2: {fileID: 1293238739664390536, guid: e22492b16768d8147bb9df3b9e36aefb, type: 3}
   PFEnemy3: {fileID: 1293238739664390536, guid: 203f3b3e6c52e6b4da8a803f938e1b39, type: 3}
   PFObstacle: {fileID: 2611718937533631256, guid: c6003a8e520a5ef448089314f896a2f9, type: 3}
   BGSong: {fileID: 1224064989}
