@@ -8,27 +8,8 @@ using UnityEngine.SceneManagement;
 public class Cheats : MonoBehaviour
 {
 	private string message = "";
-	public GameObject PauseScreen;
-
 	private void Update()
 	{
-
-		if (Input.GetKey(KeyCode.Escape))
-		{
-			if (GameSettings.IsPaused)
-			{
-				Time.timeScale = 1;
-				GameSettings.IsPaused = false;
-				PauseScreen.transform.position = new Vector3(PauseScreen.transform.position.x, 1080, PauseScreen.transform.position.z);
-			}
-			else
-			{
-				Time.timeScale = 0;
-				GameSettings.IsPaused = true;
-				PauseScreen.transform.position = new Vector3(PauseScreen.transform.position.x, 0, PauseScreen.transform.position.z);
-			}
-		}
-
 		if (Input.GetKey(KeyCode.LeftAlt))
 		{
 			//Alt + I: Player Invencible

@@ -1516,6 +1516,7 @@ GameObject:
   - component: {fileID: 380344794}
   - component: {fileID: 380344796}
   - component: {fileID: 380344795}
+  - component: {fileID: 380344797}
   m_Layer: 5
   m_Name: PauseOverlay
   m_TagString: Untagged
@@ -1586,6 +1587,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380344793}
   m_CullTransparentMesh: 1
+--- !u!114 &380344797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380344793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdef9cc2abc09e24d957c10396dd1e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bt_Voltar: {fileID: 1307927126}
 --- !u!1 &398455264
 GameObject:
   m_ObjectHideFlags: 0
@@ -3193,7 +3207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6024c7a80c0de4aa64b82d833cd8ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseScreen: {fileID: 380344793}
 --- !u!1 &807748106
 GameObject:
   m_ObjectHideFlags: 0
@@ -5406,19 +5419,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1307927127}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1118078224}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: Resume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Fase01
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1307927127
 MonoBehaviour:
   m_ObjectHideFlags: 0
