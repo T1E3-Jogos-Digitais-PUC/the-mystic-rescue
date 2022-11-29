@@ -37,16 +37,16 @@ public class GameController : MonoBehaviour
 			decay = 1f;
 			if (Time.timeScale == 0)
 			{
-				PreeEsc();
+				PressEsc();
 			}
 			else
 			{
-				PreeEsc(false);
+				PressEsc(false);
 			}
 		}
 	}
 
-	void PreeEsc(bool resume = true)
+	void PressEsc(bool resume = true)
 	{
 		Time.timeScale = resume ? 1 : 0;
 		GameSettings.IsPaused = !resume;
