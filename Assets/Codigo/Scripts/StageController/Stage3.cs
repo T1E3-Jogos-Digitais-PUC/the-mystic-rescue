@@ -6,7 +6,7 @@ namespace Codigo.Scripts.StageController
     public class Stage3: MonoBehaviour
     {
         private float CurrentTimeInSeconds = 0.0f;
-        private int CurrentWave = 11;
+        private int CurrentWave = 1;
         public GameObject PFEnemy1;
         public GameObject PFEnemy2;
         public GameObject PFEnemy3;
@@ -170,7 +170,7 @@ namespace Codigo.Scripts.StageController
 
         private void StartBoss()
         {
-            if (CurrentTimeInSeconds >= 1f && CurrentWave == 11)
+            if (CurrentTimeInSeconds >= 10f && CurrentWave == 11)
             {
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
