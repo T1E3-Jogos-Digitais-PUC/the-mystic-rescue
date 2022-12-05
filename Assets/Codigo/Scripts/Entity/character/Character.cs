@@ -108,7 +108,6 @@ namespace Codigo.Scripts.Entity.character
                     var character = GetParentCharacterGameObject(playerGameObject);
                     var player = character.GetComponent<Player>();
                     GameSettings.Score += Score;
-                    player.Score += Score;
                     if(gameObject.tag.Equals("Boss"))
                     {
                         var bossUI = GameObject.FindWithTag("BossUI");

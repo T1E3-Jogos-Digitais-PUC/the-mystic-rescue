@@ -51,7 +51,7 @@ namespace Codigo.Scripts.Entity.player
 				}
 
 				UpdateLifeBar();
-				//UpdateScore();
+				UpdateScore();
 				GameOver();
 			}
 			else
@@ -211,11 +211,11 @@ namespace Codigo.Scripts.Entity.player
 			}
 		}
 
-		private void UpdateScore() //OBSOLETO - FOI PARA A PASTA UTILS - UpdateScore.cs
+		private void UpdateScore() 
 		{
 			if (ScoreText)
 			{
-				ScoreText.text = Score.ToString(CultureInfo.InvariantCulture);
+				ScoreText.text = GameSettings.Score.ToString(CultureInfo.InvariantCulture);
 			}
 		}
 

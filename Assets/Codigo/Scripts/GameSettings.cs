@@ -12,7 +12,7 @@
         public static bool IsPaused = false;
 
 
-        public static int Score = 0;
+        public static volatile int Score = 0;
 
     }
 }
