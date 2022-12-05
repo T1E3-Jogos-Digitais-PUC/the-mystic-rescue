@@ -20,12 +20,14 @@ A build do jogo para Windows pode ser baixada [aqui](https://drive.google.com/fi
 <BR>
 
 ## Time
-- Maycon Freitas
-<BR>
+Maycon Freitas
+
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maycon-freitas/) [![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mayconrfreitas)
-- Rafael Araújo
-<BR>
+
+Rafael Araújo
+
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rafaelaraujogloria/) [![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rafarvns)
-- Silvia Freitas
-<BR>
+
+Silvia Freitas
+
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/sil_shii/) [![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shiilk)
