@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1696675540587411167}
   - component: {fileID: 8305583244148777792}
   - component: {fileID: 7383718497197436850}
+  - component: {fileID: 7852369453141979742}
   m_Layer: 0
   m_Name: PFWeaponMain
   m_TagString: Untagged
@@ -45,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3157f019b0744b387b9de52755b0dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 3431514285580758748, guid: a643e9275f974a140a1f7852f5d1a89f, type: 3}
+  Prefab: {fileID: 6531505974510435515, guid: 045d2e753f526334da0d9f2c802223bc, type: 3}
+  Particles: {fileID: 0}
   FireSound: {fileID: 7383718497197436850}
 --- !u!82 &7383718497197436850
 AudioSource:
@@ -57,15 +59,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0b640e5ce270f7f469ad223f61f13e13, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8d1f9726f2571f448b6883981912043c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
-  m_Pitch: 1.5
+  m_Volume: 0.5
+  m_Pitch: 1.25
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 182
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -103,7 +105,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -143,3 +145,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7852369453141979742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862415653522179409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9f633c9b3c97f44a97d5976f75a144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsFX: 1
+  audio: {fileID: 7383718497197436850}

@@ -6,6 +6,9 @@
         ENEMY,
         PLAYER_BULLET,
         ENEMY_BULLET,
-        OBSTACLE
+        OBSTACLE,
+        POWERUP,
+        SHIELD,
+        NONE
     }
 }

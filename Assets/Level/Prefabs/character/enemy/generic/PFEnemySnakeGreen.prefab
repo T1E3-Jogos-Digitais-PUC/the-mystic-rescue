@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 779200900059498057}
   - component: {fileID: 5618886902161444131}
   - component: {fileID: 3407956032193883693}
+  - component: {fileID: 5130244419799374402}
   m_Layer: 0
   m_Name: PFEnemySnakeGreen
   m_TagString: Enemy
@@ -138,6 +139,12 @@ MonoBehaviour:
   AttackDamage: 2
   FireRate: 1
   Type: 1
+  Explosion: {fileID: 0}
+  DamageByBulletEffect: {fileID: 0}
+  ItemDrop: {fileID: 2897127163493187192, guid: 0e8e7cbf11867324d87c840e0534962a, type: 3}
+  ItemDropChance: 10
+  IsInvencible: 0
+  Score: 125
 --- !u!65 &5618886902161444131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -167,6 +174,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &5130244419799374402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7179261229017394339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf4db89f0b74547bf9905c94e65dd4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OutOfScreen: 0
+  OutOfScreenAxisX: 1
+  BySeconds: 0
 --- !u!1001 &7989151337679882671
 PrefabInstance:
   m_ObjectHideFlags: 0

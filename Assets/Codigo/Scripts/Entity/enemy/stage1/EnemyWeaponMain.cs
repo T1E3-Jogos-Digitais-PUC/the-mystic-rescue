@@ -27,7 +27,7 @@ namespace Codigo.Scripts.Entity.enemy.stage1
             {
                 if (NextFire <= 0.0f)
                 {
-                    GameObject instantiatedBullet = Instantiate(Prefab, transform.position, transform.rotation);
+                    GameObject instantiatedBullet = Instantiate(Prefab, transform.position, ParentCharacter.transform.rotation);
                     List<Character> childrenBullets = Character.GetChildrenCharacterGameObject(instantiatedBullet);
                     foreach (var childrenBullet in childrenBullets)
                     {
