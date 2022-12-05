@@ -180,7 +180,7 @@ namespace Codigo.Scripts.StageController
                 CurrentTimeInSeconds = 0.0f;
                 CurrentWave++;
                 var bossGameObject = GameObject.FindWithTag("Boss");
-                var boss = bossGameObject.GetComponent<EnemyBoss1>();
+                var boss = bossGameObject.GetComponent<EnemyBoss2>();
                 boss.PlayCutScene();
                 if (BGBossSong)
                 {

@@ -15,7 +15,6 @@ namespace Codigo.Scripts.Entity.enemy.stage1
         private bool StartCutScene = false;
         private GameObject BossUI;
         private float CurrentTimeInSeconds = 0.0f;
-        private float NewPositionY = 0f;
         private void Start()
         {
             IsInvencible = true;
@@ -51,30 +50,46 @@ namespace Codigo.Scripts.Entity.enemy.stage1
                 Weapon.SetActive(true);
             }
         }
+        
         private void EnemyMovement()
         {
-            CurrentTimeInSeconds += Time.deltaTime;
-            if (CurrentTimeInSeconds <= 4f)
+            if (transform.position.y < GameSettings.SCREEN_LIMIT_Y[0])
             {
-                float xDirection = -1;
-                if (transform.position.x <= GameSettings.SCREEN_LIMIT_X[1] - 4)
-                {
-                    xDirection = 0;
-                }
-                Direction = new Vector3(xDirection, 0, 0);
+                Vertical = 1;
             }
-            else
+            if (transform.position.y > GameSettings.SCREEN_LIMIT_Y[1])
             {
-                float xDirection = 1;
-                if (transform.position.x >= GameSettings.SCREEN_LIMIT_X[1] + 1)
-                {
-                    CurrentTimeInSeconds = 0;
-                    NewPositionY = Random.Range(GameSettings.SCREEN_LIMIT_Y[0] + 1, GameSettings.SCREEN_LIMIT_Y[1] - 1);
-                }
-                Direction = new Vector3(xDirection, 0, 0);
+                Vertical = -1;
             }
+            Direction = new Vector3(-0, Vertical, 0);
             transform.position += Direction * (Speed * Time.deltaTime);
         }
+        
+        // private void EnemyMovement()
+        // {
+        //     CurrentTimeInSeconds += Time.deltaTime;
+        //     if (CurrentTimeInSeconds <= 4f)
+        //     {
+        //         float xDirection = -1;
+        //         if (transform.position.x <= GameSettings.SCREEN_LIMIT_X[1] - 4)
+        //         {
+        //             xDirection = 0;
+        //         }
+        //         Direction = new Vector3(xDirection, transform.position.y, 0);
+        //     }
+        //     else
+        //     {
+        //         float xDirection = 1;
+        //         if (transform.position.x >= GameSettings.SCREEN_LIMIT_X[1] + 4)
+        //         {
+        //             CurrentTimeInSeconds = 0f;
+        //             transform.position = new Vector3(transform.position.x, Random.Range(-2f, 2f), 0);
+        //             return;
+        //         }
+        //         Direction = new Vector3(xDirection, transform.position.y, 0);
+        //     }
+        //     transform.position += Direction * (Speed * Time.deltaTime);
+        // }
         
         private void UpdateLifeBar()
         {
