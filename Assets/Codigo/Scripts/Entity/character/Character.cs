@@ -20,12 +20,13 @@ namespace Codigo.Scripts.Entity.character
         public GameObject ItemDrop;
         public int ItemDropChance;
         public bool IsInvencible = false;
-        public int Score = 0;
+        public int Score = GameSettings.Score;
         protected Vector3 Direction { get; set; }
 
         private void Start()
         {
             IsInvencible = false;
+            Score = GameSettings.Score;
         }
 
         void OnCollisionEnter(Collision collision)
@@ -106,6 +107,7 @@ namespace Codigo.Scripts.Entity.character
                     var playerGameObject = GameObject.FindWithTag("Player");
                     var character = GetParentCharacterGameObject(playerGameObject);
                     var player = character.GetComponent<Player>();
+                    GameSettings.Score += Score;
                     player.Score += Score;
                     if(gameObject.tag.Equals("Boss"))
                     {
@@ -186,7 +188,10 @@ namespace Codigo.Scripts.Entity.character
         
         public void IncreaseFireRate(float fireRate)
         {
-            FireRate += fireRate;
+            if (FireRate > 0.04f)
+            {
+                FireRate += fireRate;
+            }
         }
         
         public void IncreaseAttackDamage(float attackDamage)

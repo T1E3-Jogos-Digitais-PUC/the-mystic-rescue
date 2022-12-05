@@ -11,5 +11,8 @@
 
         public static bool IsPaused = false;
 
+
+        public static int Score = 0;
+
     }
 }

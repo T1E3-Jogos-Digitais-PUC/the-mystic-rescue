@@ -51,7 +51,7 @@ namespace Codigo.Scripts.Entity.player
 				}
 
 				UpdateLifeBar();
-				UpdateScore();
+				//UpdateScore();
 				GameOver();
 			}
 			else
@@ -211,7 +211,7 @@ namespace Codigo.Scripts.Entity.player
 			}
 		}
 
-		private void UpdateScore()
+		private void UpdateScore() //OBSOLETO - FOI PARA A PASTA UTILS - UpdateScore.cs
 		{
 			if (ScoreText)
 			{

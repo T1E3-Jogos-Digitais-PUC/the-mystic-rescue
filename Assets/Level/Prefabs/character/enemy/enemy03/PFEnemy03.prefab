@@ -106,7 +106,7 @@ MonoBehaviour:
   Explosion: {fileID: 0}
   DamageByBulletEffect: {fileID: 0}
   ItemDrop: {fileID: 2897127163493187192, guid: 2891c0c516b76904d917516aadc5aeb6, type: 3}
-  ItemDropChance: 15
+  ItemDropChance: 12
   IsInvencible: 0
   Score: 232
 --- !u!95 &5196831899419354887

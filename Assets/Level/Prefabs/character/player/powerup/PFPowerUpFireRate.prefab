@@ -85,7 +85,7 @@ MonoBehaviour:
   IsInvencible: 1
   Score: 0
   IncSpeed: 0
-  IncFireRate: -0.025
+  IncFireRate: -0.02
   IncAttackDamage: 0
   IncMaxHp: 0
   HealPoints: 0
