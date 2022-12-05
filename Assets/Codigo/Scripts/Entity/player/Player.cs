@@ -131,7 +131,7 @@ namespace Codigo.Scripts.Entity.player
 						SceneManager.LoadScene("Fase02");
 						break;
 					case "Fase02":
-						SceneManager.LoadScene("Vitoria");
+						SceneManager.LoadScene("Fase03");
 						break;
 					case "Fase03":
 						SceneManager.LoadScene("Vitoria");

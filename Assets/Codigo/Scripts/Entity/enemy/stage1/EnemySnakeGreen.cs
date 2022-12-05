@@ -1,7 +1,5 @@
-﻿using System;
-using Codigo.Scripts.Entity.character;
+﻿using Codigo.Scripts.Entity.character;
 using UnityEngine;
-using Random = System.Random;
 
 namespace Codigo.Scripts.Entity.enemy.stage1
 {

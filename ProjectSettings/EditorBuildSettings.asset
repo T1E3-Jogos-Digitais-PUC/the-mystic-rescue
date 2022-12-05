@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Level/Cenas/Fase02.unity
     guid: 180417c24aeba164ea561b7e28ad687d
   - enabled: 1
+    path: Assets/Level/Cenas/Fase03.unity
+    guid: ed876ba0fdafbea4a8c3ceb0a209e231
+  - enabled: 1
     path: Assets/Level/Cenas/Credits.unity
     guid: 3179f043264c22942a1d4f97ba11b00d
   - enabled: 1
